@@ -1,56 +1,170 @@
-/* Archive page styles */
+/* ===== Premium Archive Styles ===== */
+
+/* background accent using your theme vars if present */
+body {
+  background:
+    radial-gradient(1200px 500px at 50% -10%, rgba(247,201,72,.12), transparent 60%),
+    var(--sp-cream-50, #fff8e5);
+}
+
+.sp-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.sp-archive-title {
+  font-size: 2.15rem;
+  text-align: center;
+  margin: 1.5rem 0 .75rem 0;
+  word-break: break-word;
+  letter-spacing: .2px;
+}
+
+.sp-archive-meta {
+  display: flex;
+  justify-content: center;
+  gap: .6rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+.sp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .45rem .8rem;
+  border-radius: 999px;
+  background: var(--sp-cream-100, #fdeecf);
+  box-shadow: var(--sp-shadow, 0 8px 20px rgba(0,0,0,.08));
+  font-weight: 600;
+  color: var(--sp-brown-800, #3b220d);
+  font-size: .98rem;
+  border: 1px solid rgba(0,0,0,.04);
+}
+.sp-chip .dot {
+  width: .5rem; height: .5rem; border-radius: 50%;
+  background: var(--sp-red-700, #c51f1f);
+  box-shadow: 0 0 0 2px rgba(200,30,30,.08);
+}
+
+/* List as premium cards */
 #archive-list ul {
   list-style: none;
   padding: 0;
-  margin: 32px 0 0 0;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 24px auto 0 auto;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 680px) {
+  #archive-list ul { grid-template-columns: 1fr 1fr; }
 }
 
 #archive-list li {
-  background: var(--sp-cream-100);
-  border-radius: 10px;
-  box-shadow: var(--sp-shadow);
-  margin-bottom: 18px;
-  padding: 18px 22px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: var(--sp-shadow, 0 8px 20px rgba(0,0,0,.08));
+  padding: 18px 18px;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  font-size: 1.13rem;
-  transition: box-shadow 0.2s;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid rgba(0,0,0,.05);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
-
 #archive-list li:hover {
-  box-shadow: 0 12px 28px rgba(59,34,13,0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(59,34,13,0.12);
+  border-color: rgba(0,0,0,.08);
 }
 
-#archive-list strong {
-  color: var(--sp-brown-800);
-  margin-right: 8px;
+.issue-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.issue-title {
+  font-weight: 800;
+  color: var(--sp-brown-800, #3b220d);
+  font-size: 1.05rem;
+  letter-spacing: .2px;
+}
+.issue-sub {
+  font-size: .9rem;
+  color: #6b3d1caa;
+}
+
+/* CTA button */
+.issue-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: .55rem .8rem;
   font-weight: 700;
-}
-
-#archive-list a {
-  color: var(--sp-red-700);
+  border-radius: 12px;
   text-decoration: none;
-  font-weight: 700;
-  transition: color 0.2s;
+  color: #fff;
+  background: linear-gradient(180deg, var(--sp-red-700, #c51f1f), var(--sp-red-800, #a81717));
+  box-shadow: 0 6px 16px rgba(168,23,23,.2);
+  transition: box-shadow .18s ease, transform .18s ease, opacity .18s ease;
+  white-space: nowrap;
+}
+.issue-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(168,23,23,.28);
 }
 
-#archive-list a:hover {
-  color: var(--sp-red-800);
-  text-decoration: underline;
+/* Skeleton loader */
+.skeleton-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  max-width: 760px;
+  margin: 24px auto 0;
+}
+@media (min-width: 680px) {
+  .skeleton-list { grid-template-columns: 1fr 1fr; }
+}
+.skeleton-card {
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: var(--sp-shadow, 0 8px 20px rgba(0,0,0,.08));
+  padding: 18px;
+}
+.sk-bar {
+  height: 14px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #eee, #f6f6f6, #eee);
+  background-size: 200% 100%;
+  animation: sk 1.15s linear infinite;
+}
+.sk-bar + .sk-bar { margin-top: 10px; }
+@keyframes sk { 0% {background-position: 200% 0} 100% {background-position: -200% 0} }
+
+/* Error card */
+.alert-card {
+  max-width: 760px;
+  margin: 20px auto;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: var(--sp-shadow, 0 8px 20px rgba(0,0,0,.08));
+}
+.alert-card strong {
+  color: var(--sp-brown-800, #3b220d);
+}
+.alert-card div {
+  margin-top: 6px;
+  color: #6b3d1caa;
 }
 
+/* Mobile tweaks */
 @media (max-width: 600px) {
-  #archive-list li {
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: 1rem;
-    padding: 14px 12px;
-  }
-  #archive-list strong, #archive-list a {
-    margin-bottom: 4px;
-  }
+  .sp-archive-title { font-size: 1.35rem; margin: 1rem 0 .5rem; }
+  #archive-list li { padding: 14px 12px; }
+  .issue-link { padding: .5rem .7rem; border-radius: 10px; }
 }

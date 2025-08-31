@@ -1,77 +1,279 @@
-/* Issue page styles */
-#issue-title {
-  font-family: "Noto Serif Kannada", serif;
-  color: var(--sp-brown-800);
-  font-size: clamp(1.5rem, 3vw, 2.1rem);
-  margin-bottom: 18px;
-  text-align: center;
+/* ===== Premium Issue Styles ===== */
+
+/* Background accent */
+body {
+  background:
+    radial-gradient(1200px 500px at 50% -10%, rgba(247,201,72,.12), transparent 60%),
+    var(--sp-cream-50, #fff8e5);
 }
 
-#articles-list ol {
+.sp-container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+/* Back button */
+.sp-back {
+  background: linear-gradient(180deg, var(--sp-red-700, #c51f1f), var(--sp-red-800, #a81717));
+  color: var(--sp-white, #fff);
+  border: none;
+  border-radius: 10px;
+  padding: .6em 1.1em;
+  font-size: 0.98rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 1.25em;
+  box-shadow: 0 6px 16px rgba(168,23,23,.20);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.sp-back:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(168,23,23,.28); }
+
+/* Title */
+.sp-issue-title {
+  font-family: "Noto Serif Kannada", serif;
+  color: var(--sp-brown-800, #3b220d);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  margin-bottom: .75rem;
+  text-align: center;
+  letter-spacing: .2px;
+}
+
+/* Meta chips */
+.sp-issue-meta {
+  display: flex;
+  justify-content: center;
+  gap: .6rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+.sp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .45rem .8rem;
+  border-radius: 999px;
+  background: var(--sp-cream-100, #fdeecf);
+  box-shadow: var(--sp-shadow, 0 8px 20px rgba(0,0,0,.08));
+  font-weight: 600;
+  color: var(--sp-brown-800, #3b220d);
+  font-size: .98rem;
+  border: 1px solid rgba(0,0,0,.04);
+}
+.sp-chip .dot {
+  width: .5rem; height: .5rem; border-radius: 50%;
+  background: var(--sp-red-700, #c51f1f);
+  box-shadow: 0 0 0 2px rgba(200,30,30,.08);
+}
+
+/* Skeleton loader */
+.skeleton-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  max-width: 760px;
+  margin: 18px auto 0;
+}
+@media (min-width: 700px) { .skeleton-list { grid-template-columns: 1fr 1fr; } }
+.skeleton-card {
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: var(--sp-shadow, 0 8px 20px rgba(0,0,0,.08));
+  padding: 18px;
+}
+.sk-bar {
+  height: 14px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #eee, #f6f6f6, #eee);
+  background-size: 200% 100%;
+  animation: sk 1.15s linear infinite;
+}
+.sk-bar + .sk-bar { margin-top: 10px; }
+@keyframes sk { 0% {background-position: 200% 0} 100% {background-position: -200% 0} }
+
+/* Articles list */
+.sp-ol {
   list-style: none;
   padding: 0;
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 820px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 920px) {
+  .sp-ol { grid-template-columns: 1fr 1fr; }
 }
 
-#articles-list li {
-  background: var(--sp-cream-100);
+.sp-article {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: var(--sp-shadow, 0 8px 20px rgba(0,0,0,.08));
+  border: 1px solid rgba(0,0,0,.06);
+  padding: 16px 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.sp-article:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(59,34,13,0.12);
+  border-color: rgba(0,0,0,.08);
+}
+
+.sp-article-main {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.sp-article-title {
+  font-weight: 800;
+  color: var(--sp-brown-800, #3b220d);
+  font-size: 1.05rem;
+  letter-spacing: .2px;
+}
+.sp-article-title .index {
+  color: #6b3d1caa;
+  margin-right: 6px;
+}
+.sp-article-author {
+  color: var(--sp-brown-600, #6b3d1c);
+  font-size: .95rem;
+}
+
+/* Actions */
+.sp-article-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: .52rem .8rem;
+  font-weight: 700;
   border-radius: 10px;
-  box-shadow: var(--sp-shadow);
-  margin-bottom: 18px;
-  padding: 18px 22px;
-  font-size: 1.13rem;
-  transition: box-shadow 0.2s;
-}
-
-#articles-list li:hover {
-  box-shadow: 0 12px 28px rgba(59,34,13,0.12);
-}
-
-#articles-list strong {
-  color: var(--sp-brown-800);
-  font-weight: 700;
-}
-
-#articles-list a {
-  color: var(--sp-red-700);
   text-decoration: none;
-  font-weight: 700;
-  transition: color 0.2s;
+  white-space: nowrap;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+  border: 1px solid transparent;
+}
+.btn svg { display: inline-block; }
+
+.btn.view {
+  color: #fff;
+  background: linear-gradient(180deg, var(--sp-red-700, #c51f1f), var(--sp-red-800, #a81717));
+  box-shadow: 0 6px 16px rgba(168,23,23,.2);
+}
+.btn.view:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(168,23,23,.28); }
+
+.btn.ghost {
+  background: #fff;
+  color: var(--sp-red-700, #c51f1f);
+  border: 1px solid rgba(197,31,31,.25);
+}
+.btn.ghost:hover {
+  background: rgba(197,31,31,.06);
+  transform: translateY(-1px);
 }
 
-#articles-list a:hover {
-  color: var(--sp-red-800);
-  text-decoration: underline;
+/* Error card */
+.alert-card {
+  max-width: 820px;
+  margin: 20px auto;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: var(--sp-shadow, 0 8px 20px rgba(0,0,0,.08));
+}
+.alert-card strong { color: var(--sp-brown-800, #3b220d); }
+.alert-card div { margin-top: 6px; color: #6b3d1caa; }
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .sp-ol { grid-template-columns: 1fr; }
+  .sp-article { padding: 14px; }
+  .sp-article-actions { width: 100%; justify-content: flex-start; }
+  .sp-issue-title { font-size: 1.35rem; }
 }
 
-#articles-list span {
-  color: var(--sp-brown-600);
-  font-size: 1rem;
-}
+/* ==== Mobile alignment & wrapping fixes (add at end) ==== */
 
-button[onclick*="history.back"] {
-  background: var(--sp-red-700);
-  color: var(--sp-white);
-  border: none;
-  border-radius: 8px;
-  padding: .6em 1.2em;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-  margin-bottom: 1.5em;
-  transition: background 0.2s;
-}
-button[onclick*="history.back"]:hover {
-  background: var(--sp-red-800);
-}
-
-@media (max-width: 600px) {
-  #articles-list li {
-    font-size: 1rem;
-    padding: 14px 12px;
+/* 1) Force single column on all phones */
+@media (max-width: 780px) {
+  .sp-ol {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
   }
-  #issue-title {
-    font-size: 1.2rem;
+}
+
+/* 2) Make each article card stack vertically on phones */
+@media (max-width: 700px) {
+  .sp-article {
+    flex-direction: column;
+    align-items: stretch;    /* stretch inner sections full width */
   }
+  .sp-article-main {
+    gap: 4px;
+  }
+  .sp-article-actions {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 8px;
+  }
+}
+
+/* 3) Buttons: tidy stacking on narrow screens */
+@media (max-width: 560px) {
+  .sp-article-actions .btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}
+
+/* 4) Long Kannada titles / author names shouldn’t overflow */
+.sp-article-title,
+.sp-article-author,
+.sp-chip {
+  word-break: break-word;
+  overflow-wrap: anywhere;   /* modern browsers */
+  hyphens: auto;
+}
+
+/* 5) Chips: allow clean wrapping and avoid cramped layout */
+.sp-issue-meta {
+  gap: .5rem .6rem;
+}
+.sp-chip {
+  max-width: 100%;
+  white-space: normal;       /* allow multi-line chip */
+  line-height: 1.25;
+}
+
+/* 6) Back button: consistent touch target & alignment */
+.sp-back {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+/* 7) SVG/action icon baseline alignment */
+.btn svg {
+  vertical-align: middle;
+}
+
+/* 8) Slightly smaller fonts on very small phones */
+@media (max-width: 380px) {
+  .sp-issue-title { font-size: 1.2rem; }
+  .sp-article-title { font-size: 1rem; }
+  .sp-article-author { font-size: .9rem; }
 }

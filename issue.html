@@ -4,20 +4,50 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Issue Articles | Sahithya Prasthana</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Kannada:wght@600;700&family=Marcellus&display=swap" rel="stylesheet">
+
+  <!-- Base/theme -->
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/home.css">
+
+  <!-- Issue styles (premium) -->
   <link rel="stylesheet" href="/css/issue.css">
 </head>
 <body>
   <div id="header-include"></div>
-  <main class="sp-container">
-    <button onclick="window.history.back()" style="margin-bottom:1em;">← Back</button>
-    <h1 id="issue-title">ಸಂಚಿಕೆ</h1>
-    <div id="articles-list"></div>
+
+  <main class="sp-container" aria-busy="true">
+    <button class="sp-back" onclick="window.history.back()">← ಹಿಂತಿರುಗಿ (Back)</button>
+
+    <h1 id="issue-title" class="sp-issue-title">ಸಂಚಿಕೆ</h1>
+    <div id="issue-meta" class="sp-issue-meta" aria-live="polite"></div>
+
+    <!-- Skeleton while fetching -->
+    <div id="skeleton">
+      <div class="skeleton-list" aria-hidden="true">
+        <div class="skeleton-card">
+          <div class="sk-bar" style="width:70%"></div>
+          <div class="sk-bar" style="width:45%"></div>
+        </div>
+        <div class="skeleton-card">
+          <div class="sk-bar" style="width:60%"></div>
+          <div class="sk-bar" style="width:40%"></div>
+        </div>
+        <div class="skeleton-card">
+          <div class="sk-bar" style="width:65%"></div>
+          <div class="sk-bar" style="width:42%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="articles-list" hidden></div>
   </main>
+
   <div id="footer-include"></div>
+
   <script src="/js/include.js"></script>
   <script src="/js/nav.js"></script>
   <script>
@@ -26,38 +56,116 @@
       .then(() => { if (window.spNavInit) window.spNavInit(); });
   </script>
   <script src="/js/lang.js"></script>
+
   <script>
-    // Parse query params
+    // --- Helpers ---
     function getQueryParam(name) {
       const url = new URL(window.location.href);
       return url.searchParams.get(name);
     }
-    const year = getQueryParam('year');
-    const volume = getQueryParam('volume');
-    const issueNum = getQueryParam('issue');
+    function normalizeIssues(issuesRaw) {
+      if (!issuesRaw) return {};
+      // Accept both object and array
+      if (Array.isArray(issuesRaw)) {
+        const obj = {};
+        issuesRaw.forEach((v,i) => obj[String(i+1)] = v ?? {});
+        return obj;
+      }
+      return issuesRaw;
+    }
 
+    // --- Params ---
+    const year = getQueryParam('year') ?? '';
+    const volume = getQueryParam('volume') ?? '';
+    const issueNum = getQueryParam('issue') ?? '';
+
+    // --- Fetch metadata & render ---
     fetch('assets/metadata.json')
-      .then(response => response.json())
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(data => {
-        const issues = data.Issues || data.Issue;
-        const issue = issues[issueNum];
-        document.getElementById('issue-title').textContent = `Year: ${year} | Volume: ${volume} | Issue: ${issueNum} (${issue.Period})`;
-        let html = '<ol>';
-        for (const [artNum, article] of Object.entries(issue.Articles)) {
-          // Assume PDF is at article.path + '.pdf'
-          html += `<li>
-            <a href="${article.path}.pdf" target="_blank">
+        const issues = normalizeIssues(data.Issues ?? data.Issue);
+        const issue = issues?.[issueNum];
 
-              <strong>${artNum}. ${article.Title}</strong>
-            </a><br>
-            <span>${article.Author}</span>
-          </li>`;
+        const titleEl = document.getElementById('issue-title');
+        const metaEl  = document.getElementById('issue-meta');
+
+        if (!issue) {
+          titleEl.textContent = 'Issue not found';
+          document.getElementById('skeleton').hidden = true;
+          const listEl = document.getElementById('articles-list');
+          listEl.hidden = false;
+          listEl.innerHTML = `<div class="alert-card"><strong>Invalid issue.</strong> Check the URL parameters.</div>`;
+          document.querySelector('main').setAttribute('aria-busy','false');
+          return;
         }
-        html += '</ol>';
-        document.getElementById('articles-list').innerHTML = html;
+
+        // Title (Kannada + concise English trail)
+        titleEl.textContent = `ಸಂಚಿಕೆ (Issue) ${issueNum}`;
+
+        // Top chips: Year, Volume, Issue, and Period (if present)
+        const chips = [
+          { label: 'ವರ್ಷ (Year)',   value: year },
+          { label: 'ಸಂಪುಟ (Volume)', value: volume },
+          { label: 'ಸಂಚಿಕೆ (Issue)', value: issueNum },
+        ];
+        if (issue.Period) chips.push({ label: 'ಕಾಲ (Period)', value: issue.Period });
+
+        metaEl.innerHTML = chips.map(ch => `
+          <span class="sp-chip" title="${ch.label}">
+            <span class="dot" aria-hidden="true"></span>
+            <span>${ch.label}:</span> <span>${ch.value}</span>
+          </span>`).join('');
+
+        // Articles
+        const articles = issue.Articles || {};
+        const items = Object.entries(articles);
+
+        const listHTML = ['<ol class="sp-ol">'].concat(
+          items.map(([artNum, article]) => {
+            const title  = article?.Title ?? 'Untitled';
+            const author = article?.Author ?? '';
+            const base   = article?.path ?? '';
+            const pdfUrl = base ? `${base}.pdf` : '#';
+
+            return `
+              <li class="sp-article">
+                <div class="sp-article-main">
+                  <div class="sp-article-title"><span class="index">${artNum}.</span> ${title}</div>
+                  ${author ? `<div class="sp-article-author">${author}</div>` : ``}
+                </div>
+                <div class="sp-article-actions">
+                  <a class="btn view" href="${pdfUrl}" target="_blank" rel="noopener" aria-label="View PDF of ${title}">
+                    View PDF
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M7 17l10-10M17 7H9m8 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                  <a class="btn ghost" href="${pdfUrl}" download aria-label="Download PDF of ${title}">
+                    Download
+                  </a>
+                </div>
+              </li>`;
+          })
+        ).concat(['</ol>']).join('');
+
+        document.querySelector('main').setAttribute('aria-busy','false');
+        document.getElementById('skeleton').hidden = true;
+
+        const listEl = document.getElementById('articles-list');
+        listEl.hidden = false;
+        listEl.innerHTML = listHTML;
       })
       .catch(err => {
-        document.getElementById('articles-list').innerHTML = '<p>Articles could not be loaded.</p>';
+        document.querySelector('main').setAttribute('aria-busy','false');
+        document.getElementById('skeleton').hidden = true;
+        const listEl = document.getElementById('articles-list');
+        listEl.hidden = false;
+        listEl.innerHTML = `
+          <div class="alert-card">
+            <strong>Articles could not be loaded.</strong>
+            <div>Please check <code>assets/metadata.json</code> and query params.</div>
+          </div>`;
+        console.error('Issue load error:', err);
       });
   </script>
 </body>

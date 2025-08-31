@@ -1,6 +1,6 @@
 // Desktop inline nav + Mobile floating popup menu (responsive + a11y)
 (function () {
-  // Optional: keep inline toggle for mid-size tablets if you ever show it
+  // -------- Inline (desktop/tablet) nav (kept for future use) --------
   function initInlineNav(){
     var toggle = document.getElementById('spNavToggle');
     var links  = document.getElementById('spNavLinks');
@@ -16,7 +16,7 @@
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape') set(false); });
   }
 
-  // Mobile popup gated by media query
+  // -------- Mobile popup (FAB) --------
   function initPopupMenuResponsive(){
     var fab   = document.getElementById('spMenuFab');
     var menu  = document.getElementById('spMenu');
@@ -29,7 +29,6 @@
     var open = false;
     var prevFocus = null;
 
-    // Handlers we add/remove
     function onFabClick(){ set(!open); }
     function onCloseClick(){ set(false); }
     function onMenuClick(e){ if (e.target && e.target.getAttribute('data-close')) set(false); }
@@ -53,7 +52,11 @@
       }
     }
 
+    // track listeners so we can remove on desktop
+    var enabled = false;
     function enable(){
+      if (enabled) return;
+      enabled = true;
       fab.addEventListener('click', onFabClick);
       close.addEventListener('click', onCloseClick);
       menu.addEventListener('click', onMenuClick);
@@ -65,6 +68,8 @@
     }
 
     function disable(){
+      if (!enabled) return;
+      enabled = false;
       set(false); // close and unlock scroll
       fab.removeEventListener('click', onFabClick);
       close.removeEventListener('click', onCloseClick);
@@ -80,14 +85,58 @@
       else disable();           // desktop
     }
 
-    // Listen for viewport changes + apply once on load
     mq.addEventListener('change', apply);
     apply(mq);
   }
 
-  // Expose init to run after header include finishes
+  // -------- Language toggle relocation (desktop ↔ mobile menu) --------
+  function initLangRelocation(){
+    var MOBILE_MAX = 786; // keep in sync with CSS
+    var header = document.querySelector('.sp-header');
+    var langBtn = document.getElementById('langToggle');
+    var extraHost = document.getElementById('spMenuExtra'); // add this div in the mobile panel
+    if (!header || !langBtn || !extraHost) return;
+
+    // anchor to restore in header (right after it)
+    var restoreAnchor = document.createComment('lang-restore-anchor');
+    if (!header.firstChild || header.firstChild !== restoreAnchor) {
+      header.insertBefore(restoreAnchor, header.firstChild);
+    }
+
+    function isMobile(){ return window.innerWidth <= MOBILE_MAX; }
+
+    function relocate(){
+      if (isMobile()) {
+        // into menu panel
+        if (langBtn.parentElement !== extraHost) {
+          extraHost.appendChild(langBtn);
+          langBtn.setAttribute('aria-label', 'Toggle language (menu)');
+          // ensure it's visible when inside the panel
+          langBtn.style.display = 'block';
+        }
+      } else {
+        // back to header floating position
+        if (langBtn.parentNode !== header) {
+          header.insertBefore(langBtn, restoreAnchor.nextSibling);
+          langBtn.setAttribute('aria-label', 'Toggle language');
+          langBtn.style.display = ''; // revert to CSS control
+        }
+      }
+    }
+
+    // initial + debounced resize
+    relocate();
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(relocate, 120);
+    });
+  }
+
+  // -------- Expose init to run after header include finishes --------
   window.spNavInit = function(){
     initInlineNav();
     initPopupMenuResponsive();
+    initLangRelocation();
   };
 })();

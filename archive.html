@@ -4,19 +4,42 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Sahithya Prasthana | Archive</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Kannada:wght@600;700&family=Marcellus&display=swap" rel="stylesheet">
+
+  <!-- Base/theme -->
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/home.css">
+
+  <!-- Archive styles (premium look) -->
   <link rel="stylesheet" href="/css/archive.css">
 </head>
 <body>
   <div id="header-include"></div>
-  <main class="sp-container">
-    <h1>ಪತ್ರಿಕೆಯ ಸಂಚಿಕೆಗಳು (Archive)</h1>
-    <div id="archive-list"></div>
+
+  <main class="sp-container" aria-busy="true">
+    <h1 class="sp-archive-title">ಪತ್ರಿಕೆಯ ಸಂಚಿಕೆಗಳು (Archive)</h1>
+
+    <!-- Year & Volume chips -->
+    <div class="sp-archive-meta" id="meta-chips" aria-live="polite"></div>
+
+    <!-- Skeleton while fetching -->
+    <div id="skeleton">
+      <div class="skeleton-list" aria-hidden="true">
+        <div class="skeleton-card"><div class="sk-bar" style="width:50%"></div><div class="sk-bar" style="width:80%"></div></div>
+        <div class="skeleton-card"><div class="sk-bar" style="width:40%"></div><div class="sk-bar" style="width:70%"></div></div>
+        <div class="skeleton-card"><div class="sk-bar" style="width:55%"></div><div class="sk-bar" style="width:60%"></div></div>
+        <div class="skeleton-card"><div class="sk-bar" style="width:48%"></div><div class="sk-bar" style="width:66%"></div></div>
+      </div>
+    </div>
+
+    <div id="archive-list" hidden></div>
   </main>
+
   <div id="footer-include"></div>
+
   <script src="/js/include.js"></script>
   <script src="/js/nav.js"></script>
   <script>
@@ -24,28 +47,75 @@
       .then(() => include('#footer-include','/partials/footer.html'))
       .then(() => { if (window.spNavInit) window.spNavInit(); });
   </script>
+
   <script src="/js/lang.js"></script>
   <script>
+    // Normalize Issues to iterable pairs [issueNum, issueObj]
+    function normalizeIssues(issuesRaw) {
+      if (!issuesRaw) return [];
+      if (Array.isArray(issuesRaw)) return issuesRaw.map((v,i)=>[String(i+1), v ?? {}]);
+      return Object.entries(issuesRaw);
+    }
+
     fetch('assets/metadata.json')
-      .then(response => response.json())
+      .then(r => { if (!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
       .then(data => {
-        const archiveDiv = document.getElementById('archive-list');
-        let html = '<ul>';
-        const year = data.Year || '';
-        const volume = data.Volume || '';
-        const issues = data.Issues || data.Issue;
-        for (const [issueNum, issue] of Object.entries(issues)) {
-          html += `<li>
-            <strong>Year:</strong> ${year} &nbsp; 
-            <strong>Volume:</strong> ${volume} &nbsp; 
-            <strong>Issue:</strong> <a href="issue.html?year=${encodeURIComponent(year)}&volume=${encodeURIComponent(volume)}&issue=${encodeURIComponent(issueNum)}">${issueNum} (${issue.Period})</a>
-          </li>`;
-        }
-        html += '</ul>';
-        archiveDiv.innerHTML = html;
+        const year = data.Year ?? '';
+        const volume = data.Volume ?? '';
+        const issues = normalizeIssues(data.Issues ?? data.Issue);
+
+        // Top chips: ONLY Year & Volume
+        const chips = [
+          { label: 'ವರ್ಷ (Year)', value: year },
+          { label: 'ಸಂಪುಟ (Volume)', value: volume }
+        ].filter(x => String(x.value).trim() !== '');
+
+        const metaEl = document.getElementById('meta-chips');
+        metaEl.innerHTML = chips.map(ch => `
+          <span class="sp-chip" title="${ch.label}">
+            <span class="dot" aria-hidden="true"></span>
+            <span>${ch.label}:</span> <span>${ch.value}</span>
+          </span>
+        `).join('');
+
+        // Issues list: ONLY Issue number (no Period)
+        const listHTML = ['<ul>'].concat(
+          issues.map(([issueNum]) => {
+            const q = new URLSearchParams({ year, volume, issue: issueNum }).toString();
+            return `
+              <li>
+                <div class="issue-info">
+                  <div class="issue-title">ಸಂಚಿಕೆ (Issue): ${issueNum}</div>
+                  <div class="issue-sub">Year: ${year} • Volume: ${volume}</div>
+                </div>
+                <a class="issue-link" href="issue.html?${q}" aria-label="Open Issue ${issueNum}">
+                  ತೆರೆ (Open)
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </li>`;
+          })
+        ).concat(['</ul>']).join('');
+
+        document.querySelector('main').setAttribute('aria-busy','false');
+        document.getElementById('skeleton').hidden = true;
+
+        const listEl = document.getElementById('archive-list');
+        listEl.hidden = false;
+        listEl.innerHTML = listHTML;
       })
       .catch(err => {
-        document.getElementById('archive-list').innerHTML = '<p>Archive data could not be loaded.</p>';
+        document.querySelector('main').setAttribute('aria-busy','false');
+        document.getElementById('skeleton').hidden = true;
+        const el = document.getElementById('archive-list');
+        el.hidden = false;
+        el.innerHTML = `
+          <div role="alert" class="alert-card">
+            <strong>Archive data could not be loaded.</strong>
+            <div>Please check <code>assets/metadata.json</code>.</div>
+          </div>`;
+        console.error('Archive load error:', err);
       });
   </script>
 </body>

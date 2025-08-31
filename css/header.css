@@ -168,3 +168,36 @@
   outline:3px solid var(--sp-gold-500);
   outline-offset:2px;
 }
+/* Hide floating lang pill on small screens (we move it into menu) */
+@media (max-width: 786px){
+  .sp-lang{ display:none; }
+}
+
+/* Container inside the mobile panel */
+.sp-menu__extra{
+  padding: 10px 14px 0;
+}
+
+/* Re-style the lang button when it's inside the menu panel */
+.sp-menu__panel .sp-lang{
+  display:block;
+  position: static;     /* lose absolute positioning */
+  width: 100%;
+  text-align: center;
+  background: #fde7e7;
+  color: #7a1f1f;
+  border: 2px solid var(--sp-gold-500);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+}
+.sp-menu__panel .sp-lang:hover{
+  background:#fbd3d3;
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+}
+.sp-menu__panel .sp-lang:active{
+  transform: translateY(1px);
+}

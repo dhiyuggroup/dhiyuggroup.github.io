@@ -81,7 +81,89 @@
     "eb_tech_name": "Karan Sambhaji Jadhav",
     "eb_tech_affil": "Guest Faculty, BCA Department, Bengaluru University, Jnanabharathi Campus, Bengaluru - 560056.",
 
-    "label_phone": "Ph:"
+    "label_phone": "Ph:",
+     "sg_title": "Submission Guidelines | Sahithya Prasthana",
+    "sg_heading": "Submission Guidelines",
+    "sg_subtitle": "Guidance for submitting your original research/articles in Kannada Studies.",
+    "sg_chip_freq": "Bi-monthly",
+    "sg_chip_scope": "Multidisciplinary",
+    "sg_chip_review": "Double-blind peer review",
+    "sg_btn_submit": "Submit via Email",
+    "sg_btn_archive": "Browse Archive",
+
+    "sg_sec_general": "General Requirements",
+    "sg_general_p1": "We welcome original research, review articles, and scholarly writings related to Kannada language, literature, culture, and allied disciplines. Submissions must be original and not published/submitted elsewhere.",
+    "sg_general_li1": "Originality required; plagiarism should be under 10%.",
+    "sg_general_li2": "No simultaneous submissions to multiple journals.",
+    "sg_general_li3": "All co-authors must consent to submission.",
+
+    "sg_sec_format": "Formatting Requirements",
+    "sg_format_doc": "Document Format",
+    "sg_format_li1": "Submit in .doc / .docx (Microsoft Word).",
+    "sg_format_li2": "Font: Times New Roman (EN) / Tunga/Baraha (KN), 12pt, double-spaced.",
+    "sg_format_li3": "Title page must include title, author name(s), affiliation, and email.",
+    "sg_format_li4": "Include an abstract of up to 250 words and 4–6 keywords.",
+    "sg_format_style": "Citation Style",
+    "sg_format_li5": "MLA footnote/endnote style (latest edition).",
+    "sg_format_li6": "Provide captions and sources for figures/tables.",
+    "sg_format_li7": "Include a transliteration key if used.",
+
+    "sg_template_title": "Template",
+    "sg_template_desc": "Use this template for uniform formatting.",
+    "sg_btn_download_doc": "Download Word Template",
+
+    "sg_sec_review": "Peer Review Process",
+    "sg_rev_1_t": "Initial Screening (7 days)",
+    "sg_rev_1_d": "Editorial team checks scope fit, ethics, and originality.",
+    "sg_rev_2_t": "Double-blind Review (4–6 weeks)",
+    "sg_rev_2_d": "Two independent reviewers evaluate anonymously; revisions may be required.",
+    "sg_rev_3_t": "Final Decision",
+    "sg_rev_3_d": "Accept / Minor Rev / Major Rev / Reject — communicated to authors.",
+
+    "sg_sec_ethics": "Publication Ethics",
+    "sg_eth_1": "No plagiarism, data manipulation, or ghostwriting.",
+    "sg_eth_2": "Provide ethics/IRB approvals if human subjects are involved.",
+    "sg_eth_3": "Declare potential conflicts of interest.",
+    "sg_eth_4": "Comply with copyright and permissions policies.",
+
+    "sg_sec_submit": "How to Submit",
+    "sg_submit_p1": "Attach your article in Word (and optionally PDF) and email us. Subject: “Article Submission – SP”.",
+    "sg_btn_email": "submissions@journalofkannada.com",
+    "sg_submit_note": "Use the same email for queries/clarifications.",
+        "about_title": "About Us | Sahithya Prasthana",
+    "about_heading": "About the Journal",
+    "about_tagline": "A dedicated venue for high-quality research in Kannada studies, literature, and culture.",
+    "about_chip_bimonthly": "Bi-monthly",
+    "about_chip_scope": "Multidisciplinary",
+    "about_chip_review": "Double-blind peer review",
+    "about_btn_submit": "Submission Guidelines",
+    "about_btn_archive": "Browse Archive",
+
+    "about_mission_h": "Our Mission",
+    "about_mission_p": "We provide a platform to publish rigorous research and foster critical dialogue in Kannada studies. We encourage innovative ideas, clarity, and scholarly collaboration.",
+
+    "about_scope_h": "Scope",
+    "about_scope_li1": "Kannada linguistics, literature, folklore, cultural studies.",
+    "about_scope_li2": "Interdisciplinary research connecting allied fields.",
+    "about_scope_li3": "Book reviews, dialogues, and field reports.",
+
+    "about_values_h": "Values",
+    "about_values_li1": "Ethics and originality.",
+    "about_values_li2": "Scholarly rigor and clarity.",
+    "about_values_li3": "Open discourse and diversity.",
+
+    "about_board_h": "Editorial Board",
+    "about_board_p": "Our editorial board comprises esteemed scholars committed to maintaining quality and ethics of publications.",
+    "about_btn_board": "View Editorial Board",
+
+    "about_contact_h": "Contact",
+    "about_quick_h": "Quick Links",
+    "about_explore": "Explore",
+    "about_submit": "Submit",
+    "about_get_in_touch": "Get in touch",
+
+    "label_email": "Email",
+    "label_address": "Address"
 
   },
   "kn": {
@@ -160,6 +242,90 @@
     "eb_sec_tech": "ತಾಂತ್ರಿಕ ಅಭಿವೃದ್ಧಿಕಾರ",
     "eb_tech_name": "ಕರಣ ಸಂಭಾಜಿ ಜಾಧವ",
     "eb_tech_affil": "ಅತಿಥಿ ಉಪನ್ಯಾಸಕ, ಬಿ.ಸಿ.ಎ. ವಿಭಾಗ, ಬೆಂಗಳೂರು ವಿಶ್ವವಿದ್ಯಾಲಯ, ಜ್ಞಾನಭಾರತಿ ಕ್ಯಾಂಪಸ್",
-    "eb_tech_affil_cont": "ಬೆಂಗಳೂರು - 560056."
+    "eb_tech_affil_cont": "ಬೆಂಗಳೂರು - 560056.",
+
+     "sg_title": "ಸಲ್ಲಿಕೆ ಮಾರ್ಗಸೂಚಿ | Sahithya Prasthana",
+    "sg_heading": "ಸಲ್ಲಿಕೆ ಮಾರ್ಗಸೂಚಿಗಳು",
+    "sg_subtitle": "ಕನ್ನಡ ಅಧ್ಯಯನಗಳ ಕುರಿತ ನಿಮ್ಮ ಮೂಲ ಸಂಶೋಧನೆ/ಲೇಖನಗಳನ್ನು ಪ್ರಕಟಿಸಲು ಮಾರ್ಗಸೂಚಿಗಳು.",
+    "sg_chip_freq": "ದ್ವೈಮಾಸಿಕ",
+    "sg_chip_scope": "ಬಹುಶಿಸ್ತೀಯ ಕಣಜ",
+    "sg_chip_review": "ಡಬಲ್-ಬ್ಲೈಂಡ್ ಪಿಯರ್-ರಿವ್ಯೂ",
+    "sg_btn_submit": "ಇಮೇಲ್ ಮೂಲಕ ಸಲ್ಲಿಸಿ",
+    "sg_btn_archive": "ಆರ್ಕೈವ್ ವೀಕ್ಷಿಸಿ",
+
+    "sg_sec_general": "ಸಾಮಾನ್ಯ ನಿಯಮಗಳು",
+    "sg_general_p1": "ಕನ್ನಡ ಭಾಷೆ, ಸಾಹಿತ್ಯ, ಸಂಸ್ಕೃತಿ ಮತ್ತು ಸಂಬಂಧಿತ ಕ್ಷೇತ್ರಗಳಿಗೆ ಸಂಬಂಧಿಸಿದ ಮೂಲ ಸಂಶೋಧನೆ, ವಿಮರ್ಶಾ ಲೇಖನಗಳು ಹಾಗೂ ವಿದ್ವತ್ ಲೇಖನಗಳನ್ನು ನಾವು ಸ್ವಾಗತಿಸುತ್ತೇವೆ. ಲೇಖನ ಮೂಲತವಾಗಿರಬೇಕು ಹಾಗೂ ಯಾವುದಾದರೂ ಪತ್ರಿಕೆ/ಸಮ್ಮೇಳನದಲ್ಲಿ ಪ್ರಕಟಿಸದೇ ಇರಬೇಕು.",
+    "sg_general_li1": "ಮೂಲಕೃತಿಗೆ ಮಾತ್ರ ಅವಕಾಶ; ಪ್ಲೇಗಿಯರಿಸಂ ಶೇಕಡಾ 10 ಕ್ಕಿಂತ ಕಡಿಮೆ ಇರಬೇಕು.",
+    "sg_general_li2": "ಒಂದೇ ಲೇಖನವನ್ನು ಒಂದೇ ಪತ್ರಿಕೆಗೆ ಮಾತ್ರ ಸಲ್ಲಿಸಿ (ಸಮಾಂತರ ಸಲ್ಲಿಕೆ ಬೇಡ).",
+    "sg_general_li3": "ಸಹಲೇಖಕರಿದ್ದರೆ ಎಲ್ಲರ ಅನುಮತಿ ಬೇಕು.",
+
+    "sg_sec_format": "ಫಾರ್ಮ್ಯಾಟಿಂಗ್",
+    "sg_format_doc": "ದಾಖಲೆ ಸ್ವರೂಪ",
+    "sg_format_li1": ".doc / .docx (Word) ರೂಪದಲ್ಲಿ ಸಲ್ಲಿಸಿ.",
+    "sg_format_li2": "ಫಾಂಟ್: Times New Roman (EN) / Tunga/Baraha (KN) – 12pt, ಡಬಲ್-ಸ್ಪೇಸ್.",
+    "sg_format_li3": "ಶೀರ್ಷಿಕೆ ಪುಟದಲ್ಲಿ ಶೀರ್ಷಿಕೆ, ಲೇಖಕರ ಹೆಸರು(ಗಳು), ಸಂಸ್ಥೆ, ಇಮೇಲ್.",
+    "sg_format_li4": "250 ಪದಗಳ ಸಾರಾಂಶ ಹಾಗೂ 4–6 ಕೀವರ್ಡ್ಸ್ ಸೇರಿಸಿ.",
+    "sg_format_style": "ಉಲ್ಲೇಖ ಶೈಲಿ",
+    "sg_format_li5": "MLA ಫುಟ್ನೋಟ್/ಎಂಡ್‌ನೋಟ್ ಶೈಲಿ (ತಾಜಾ ಆವೃತ್ತಿ).",
+    "sg_format_li6": "ಚಿತ್ರ/ಟೇಬಲ್‌ಗಳಿಗೆ ಶೀರ್ಷಿಕೆ ಮತ್ತು ಮೂಲ ನೀಡಿರಿ.",
+    "sg_format_li7": "ಟ್ರಾನ್ಸ್ಲಿಟರೇಷನ್ ಬಳಸಿದರೆ ಕೀಲಿಮನೆ/ಕೀ-ಚಾರ್ಟ್ ಸೇರಿಸಿ.",
+
+    "sg_template_title": "ಟೆಂಪ್ಲೇಟ್",
+    "sg_template_desc": "ಏಕರೂಪ ಫಾರ್ಮ್ಯಾಟಿಂಗ್‌ಗಾಗಿ ಈ ಮಾದರಿಯನ್ನು ಬಳಸಿ.",
+    "sg_btn_download_doc": "Word ಟೆಂಪ್ಲೇಟ್ ಡೌನ್‌ಲೋಡ್",
+
+    "sg_sec_review": "ಪಿಯರ್-ರಿವ್ಯೂ ಪ್ರಕ್ರಿಯೆ",
+    "sg_rev_1_t": "ಪ್ರಾಥಮಿಕ ಪರಿಶೀಲನೆ (7 ದಿನ)",
+    "sg_rev_1_d": "ವ್ಯಾಪ್ತಿ, ನೈತಿಕತೆ, ಮೂಲತ್ವ ಮುಂತಾದವುಗಳನ್ನು ಪರಿಶೀಲನೆ.",
+    "sg_rev_2_t": "ಡಬಲ್-ಬ್ಲೈಂಡ್ ವಿಮರ್ಶೆ (4–6 ವಾರ)",
+    "sg_rev_2_d": "ಎರಡು ವಿಮರ್ಶಕರಿಂದ ಗುಪ್ತ ವಿಮರ್ಶೆ; ತಿದ್ದುಪಡಿ ಬೇಡಿಕೆಯಾಗಬಹುದು.",
+    "sg_rev_3_t": "ಅಂತಿಮ ನಿರ್ಣಯ",
+    "sg_rev_3_d": "ಸ್ವೀಕಾರ / ಸಣ್ಣ ಪರಿಷ್ಕರಣೆ / ಮಹತ್ತರ ಪರಿಷ್ಕರಣೆ / ನಿರಾಕರಣೆ — ತಿಳಿಸಲಾಗುತ್ತದೆ.",
+
+    "sg_sec_ethics": "ಪ್ರಕಟನಾ ನೈತಿಕತೆ",
+    "sg_eth_1": "ಪ್ಲೇಗಿಯರಿಸಂ, ಡೇಟಾ ಮ್ಯಾನಿಪ್ಯುಲೇಶನ್, ಗೌಸ್ಟ್-ರೈಟಿಂಗ್ ನಿಷಿದ್ಧ.",
+    "sg_eth_2": "ಮಾನವ ವಿಷಯಗಳಿದ್ದರೆ IRB/ನೈತಿಕ ಅನುಮತಿ ಸೇರಿಸಿ.",
+    "sg_eth_3": "ಹಿತಾಸಕ್ತಿಗಳ ಘೋಷಣೆ (Conflict of Interest) ನೀಡಿರಿ.",
+    "sg_eth_4": "ಕಾಪಿರೈಟ್/ಪತ್ರಭದ್ರತೆ ನಿಯಮಗಳನ್ನು ಪಾಲಿಸಿ.",
+
+    "sg_sec_submit": "ಹೀಗೆ ಸಲ್ಲಿಸಿ",
+    "sg_submit_p1": "Word ರೂಪದಲ್ಲಿ (ಐಚ್ಛಿಕವಾಗಿ PDF ಜೊತೆಯಲ್ಲಿ) ಲೇಖನವನ್ನು ಅಟ್ಯಾಚ್ ಮಾಡಿ. ವಿಷಯ (Subject): “Article Submission – SP”.",
+    "sg_btn_email": "submissions@journalofkannada.com",
+    "sg_submit_note": "ಪ್ರಶ್ನೆಗಳು/ಸ್ಪಷ್ಟೀಕರಣಗಳಿಗೆ ಇದೇ ಇಮೇಲ್.",
+     "about_title": "ನಮ್ಮ ಬಗ್ಗೆ | Sahithya Prasthana",
+    "about_heading": "ಪತ್ರಿಕೆಯ ಪರಿಚಯ",
+    "about_tagline": "ಕನ್ನಡ ಅಧ್ಯಯನ, ಸಾಹಿತ್ಯ ಮತ್ತು ಸಂಸ್ಕೃತಿಯ ಗುಣಮಟ್ಟದ ಸಂಶೋಧನೆಗಾಗಿ ಸಮರ್ಪಿತ ವೇದಿಕೆ.",
+    "about_chip_bimonthly": "ದ್ವೈಮಾಸಿಕ",
+    "about_chip_scope": "ಬಹುಶಿಸ್ತೀಯ",
+    "about_chip_review": "ಡಬಲ್-ಬ್ಲೈಂಡ್ ಪಿಯರ್-ರಿವ್ಯೂ",
+    "about_btn_submit": "ಸಲ್ಲಿಕೆ ಮಾರ್ಗಸೂಚಿ",
+    "about_btn_archive": "ಆರ್ಕೈವ್ ವೀಕ್ಷಿಸಿ",
+
+    "about_mission_h": "ನಮ್ಮ ಮಿಷನ್",
+    "about_mission_p": "ಕನ್ನಡ ಅಧ್ಯಯನ ಕ್ಷೇತ್ರದಲ್ಲಿ ದೃಢವಾದ ಸಂಶೋಧನೆ ಪ್ರಕಟಿಸಲು ಹಾಗೂ ವಿಮರ್ಶಾತ್ಮಕ ಸಂವಾದವನ್ನು ಉತ್ತೇಜಿಸಲು ವೇದಿಕೆ ಒದಗಿಸುವುದು ನಮ್ಮ ಧ್ಯೇಯ.",
+
+    "about_scope_h": "ವ್ಯಾಪ್ತಿ",
+    "about_scope_li1": "ಕನ್ನಡ ಭಾಷಾಶಾಸ್ತ್ರ, ಸಾಹಿತ್ಯ, ಜನಪದ, ಸಂಸ್ಕೃತಿ ಅಧ್ಯಯನ.",
+    "about_scope_li2": "ಸಂಬಂಧಿತ ಕ್ಷೇತ್ರಗಳ ಅಂತರಶಿಸ್ತೀಯ ಅಧ್ಯಯನಗಳು.",
+    "about_scope_li3": "ಪುಸ್ತಕ ವಿಮರ್ಶೆಗಳು, ಸಂವಾದಗಳು, ಕ್ಷೇತ್ರ ವರದಿಗಳು.",
+
+    "about_values_h": "ಮೌಲ್ಯಗಳು",
+    "about_values_li1": "ನೈತಿಕತೆ ಮತ್ತು ಮೂಲತ್ವ.",
+    "about_values_li2": "ಶೈಕ್ಷಣಿಕ ದೃಢತೆ ಮತ್ತು ಸ್ಪಷ್ಟತೆ.",
+    "about_values_li3": "ಮುಕ್ತ ಚರ್ಚೆ ಮತ್ತು ವೈವಿಧ್ಯ.",
+
+    "about_board_h": "ಸಂಪಾದಕ ಮಂಡಳಿ",
+    "about_board_p": "ಪ್ರಕಾಶನಗಳ ಗುಣಮಟ್ಟ ಮತ್ತು ನೈತಿಕತೆಯನ್ನು ಕಾಪಾಡುವಲ್ಲಿ ಬದ್ಧರಾಗಿರುವ ಖ್ಯಾತ ಪಂಡಿತರು ನಮ್ಮ ಮಂಡಳಿಯಲ್ಲಿ ಸೇರಿದ್ದಾರೆ.",
+    "about_btn_board": "ಸಂಪಾದಕ ಮಂಡಳಿ ವೀಕ್ಷಿಸಿ",
+
+    "about_contact_h": "ಸಂಪರ್ಕ",
+    "about_quick_h": "ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು",
+    "about_explore": "ಅನ್ವೇಷಿಸಿ",
+    "about_submit": "ಸಲ್ಲಿಸಿ",
+    "about_get_in_touch": "ಸಂಪರ್ಕ",
+
+    "label_email": "ಇಮೇಲ್",
+
+    "label_address": "ವಿಳಾಸ"
   }
 }

@@ -17,22 +17,80 @@
   <!-- Reusable header -->
   <div id="header-include"></div>
 
-  <main class="sp-container">
-    <section class="sp-home__featured">
-      <!-- Kannada default only; lang.js will swap via data-i18n -->
-      <h2 data-i18n="feat_title">ವಿಶೇಷ ಲೇಖನಗಳು</h2>
-
-      <p data-i18n="feat_desc">
+  <main class="sp-container sp-home">
+  <!-- HERO -->
+  <section class="sp-home__hero">
+    <div class="sp-home__hero-inner">
+      <h2 class="sp-home__title" data-i18n="feat_title">ವಿಶೇಷ ಲೇಖನಗಳು</h2>
+      <p class="sp-home__subtitle" data-i18n="feat_desc">
         ಕನ್ನಡ ಅಧ್ಯಯನಗಳ ನಮ್ಮ ಇತ್ತೀಚಿನ ಪ್ರಕಟಣೆಗಳನ್ನು ಅನ್ವೇಷಿಸಿ.
       </p>
-
       <div class="sp-home__cta">
-        <a href="/archive.html" class="sp-btn" data-i18n="feat_cta">
-          ಎಲ್ಲಾ ಲೇಖನಗಳನ್ನು ವೀಕ್ಷಿಸಿ
-        </a>
+        <a href="/archive.html" class="sp-btn" data-i18n="feat_cta">ಎಲ್ಲಾ ಲೇಖನಗಳನ್ನು ವೀಕ್ಷಿಸಿ</a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- FEATURED ISSUE (auto from metadata.json) -->
+  <section class="sp-home__section">
+    <div class="sp-home__section-head">
+      <h3 data-i18n="home_latest_issue">ಇತ್ತೀಚಿನ ಸಂಚಿಕೆ</h3>
+    </div>
+
+    <!-- skeleton while loading -->
+    <div id="home-issue-skeleton" class="home-issue__skeleton" aria-hidden="true">
+      <div class="sk-card">
+        <div class="sk-bar" style="width:55%"></div>
+        <div class="sk-bar" style="width:40%"></div>
+        <div class="sk-bar" style="width:70%"></div>
+      </div>
+    </div>
+
+    <!-- filled by JS -->
+    <div id="home-issue" class="home-issue" hidden></div>
+  </section>
+
+  <!-- QUICK LINKS -->
+  <section class="sp-home__section">
+    <div class="sp-home__section-head">
+      <h3 data-i18n="home_quick_links">ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು</h3>
+    </div>
+    <div class="home-links">
+      <a class="home-link" href="/archive.html">
+        <span data-i18n="nav_archive">ಲೇಖನ ಸಂಗ್ರಹ</span>
+        <em data-i18n="home_explore_archive">ಅನ್ವೇಷಿಸಿ</em>
+      </a>
+      <a class="home-link" href="/editorial-board.html">
+        <span data-i18n="nav_board">ಸಂಪಾದಕ ಮಂಡಳಿ</span>
+        <em data-i18n="home_meet_board">ಪರಿಚಯ</em>
+      </a>
+      <a class="home-link" href="/guidelines.html">
+        <span data-i18n="nav_submit">ಸಲ್ಲಿಕೆ ಮಾರ್ಗಸೂಚಿ</span>
+        <em data-i18n="home_submit_paper">ನಿಮ್ಮ ಲೇಖನ</em>
+      </a>
+      <a class="home-link" href="/about.html">
+        <span data-i18n="nav_about">ನಮ್ಮ ಬಗ್ಗೆ</span>
+        <em data-i18n="home_learn_more">ಇನ್ನಷ್ಟು</em>
+      </a>
+      <a class="home-link" href="/contact.html">
+        <span data-i18n="nav_contact">ಸಂಪರ್ಕಿಸಿ</span>
+        <em data-i18n="home_get_in_touch">ಸಂಪರ್ಕ</em>
+      </a>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="sp-home__section">
+    <div class="sp-home__section-head">
+      <h3 data-i18n="home_highlights">ವಿಶೇಷತೆಗಳು</h3>
+    </div>
+    <div class="home-chips">
+      <span class="chip"><span class="dot"></span><span data-i18n="highlight_bimonthly">ದ್ವೈಮಾಸಿಕ ಪತ್ರಿಕೆ</span></span>
+      <span class="chip"><span class="dot"></span><span data-i18n="highlight_multidisciplinary">ಬಹುಶಿಸ್ತೀಯ</span></span>
+      <span class="chip"><span class="dot"></span><span data-i18n="highlight_peer_reviewed">ಪಿಯರ್-ರಿವ್ಯೂಡ್</span></span>
+    </div>
+  </section>
+</main>
 
   <!-- Reusable footer -->
   <div id="footer-include"></div>
@@ -46,6 +104,75 @@
       .then(() => include('#footer-include','/partials/footer.html'))
       .then(() => { if (window.spNavInit) window.spNavInit(); });
   </script>
+    <script>
+  (function(){
+    function normalizeIssues(issuesRaw){
+      if (!issuesRaw) return {};
+      if (Array.isArray(issuesRaw)) {
+        const o = {}; issuesRaw.forEach((v,i)=>o[String(i+1)]=v||{}); return o;
+      }
+      return issuesRaw;
+    }
+    function maxIssueKey(obj){
+      // pick highest numeric key; if not numeric, last key by natural order
+      const keys = Object.keys(obj);
+      if (!keys.length) return null;
+      const num = keys
+        .map(k => ({k, n: Number(k), isNum: /^\d+$/.test(k)}))
+        .sort((a,b) => (a.isNum && b.isNum) ? b.n - a.n : a.k.localeCompare(b.k))
+        [0];
+      return num.k;
+    }
+
+    const issueWrap = document.getElementById('home-issue');
+    const skel = document.getElementById('home-issue-skeleton');
+
+    fetch('assets/metadata.json')
+      .then(r => { if (!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(data => {
+        const year = data.Year ?? '';
+        const volume = data.Volume ?? '';
+        const issuesObj = normalizeIssues(data.Issues ?? data.Issue);
+        const latestKey = maxIssueKey(issuesObj);
+        const issue = latestKey ? issuesObj[latestKey] : null;
+
+        const period = issue && issue.Period ? `<span class="meta__small">• ${issue.Period}</span>` : '';
+        const q = new URLSearchParams({ year, volume, issue: latestKey || '' }).toString();
+
+        issueWrap.innerHTML = `
+          <article class="home-issue__card">
+            <div class="home-issue__meta">
+              <span class="chip"><span class="dot"></span>ವರ್ಷ (Year): ${year}</span>
+              <span class="chip"><span class="dot"></span>ಸಂಪುಟ (Volume): ${volume}</span>
+              ${latestKey ? `<span class="chip"><span class="dot"></span>ಸಂಚಿಕೆ (Issue): ${latestKey}</span>` : ``}
+            </div>
+            <h4 class="home-issue__title">
+              ${year ? `Year ${year}` : ''} ${volume ? `• Volume ${volume}` : ''} ${latestKey ? `• Issue ${latestKey}` : ''}
+              ${period}
+            </h4>
+            <div class="home-issue__actions">
+              <a class="sp-btn" href="/issue.html?${q}" data-i18n="view_issue">ಸಂಚಿಕೆಯನ್ನು ವೀಕ್ಷಿಸಿ</a>
+              <a class="sp-btn ghost" href="/archive.html" data-i18n="explore_archive">ಆರ್ಕೈವ್ ಅನ್ವೇಷಿಸಿ</a>
+            </div>
+          </article>
+        `;
+
+        skel.hidden = true;
+        issueWrap.hidden = false;
+      })
+      .catch(() => {
+        skel.hidden = true;
+        issueWrap.hidden = false;
+        issueWrap.innerHTML = `
+          <div class="alert-card">
+            <strong>ಡೇಟಾ ಲೋಡ್ ಆಗಲಿಲ್ಲ.</strong>
+            <div>ದಯವಿಟ್ಟು <code>assets/metadata.json</code> ಪರಿಶೀಲಿಸಿ.</div>
+          </div>
+        `;
+      });
+  })();
+</script>
+
 
   <!-- i18n (loads strings from /lang/lang.json and swaps by data-i18n) -->
   <script src="/js/lang.js"></script>
