@@ -64,6 +64,8 @@
         const volume = data.Volume ?? '';
         const issues = normalizeIssues(data.Issues ?? data.Issue);
 
+        console.log(`issues=${JSON.stringify(issues)}`);
+
         // Top chips: ONLY Year & Volume
         const chips = [
           { label: 'ವರ್ಷ (Year)', value: year },
@@ -86,7 +88,9 @@
               <li>
                 <div class="issue-info">
                   <div class="issue-title">ಸಂಚಿಕೆ (Issue): ${issueNum}</div>
-                  <div class="issue-sub">Year: ${year} • Volume: ${volume}</div>
+                    <div class="issue-sub">
+                    ${(issues.find(([num]) => num === issueNum)?.[1]?.Period) || ''}
+                    </div>
                 </div>
                 <a class="issue-link" href="issue.html?${q}" aria-label="Open Issue ${issueNum}">
                   ತೆರೆ (Open)

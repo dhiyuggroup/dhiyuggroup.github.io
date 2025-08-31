@@ -66,7 +66,83 @@
                     "path": "assets/articles/volume1/issue1/article_10"
                 }
             }
+        },
+        "2": {
+            "Period": "May-June",
+            "Articles": {
+                "1": {
+                    "Title": "ಶಾಸನಗಳಲ್ಲಿ ಸ್ತ್ರೀ ಸಂವೇದನೆಯ ಸ್ವರೂಪ",
+                    "Author": "ಡಾ. ಕೆಂಗಲ್ ಮೂರ್ತಿ ಕೆ. ಜಿ.",
+                    "Abstract": "Abstract for article 1.",
+                    "path": "assets/articles/volume1/issue2/article_1"
+                },
+                "2": {
+                    "Title": "ಅವಧೂತ ಪರಂಪರೆಯಲ್ಲಿ ಗುರು-ಶಿಷ್ಯರ ಸಂಬಂಧ",
+                    "Author": "ರವೀಂದ್ರ ಕೆ. ವಿ.",
+                    "Abstract": "Abstract for article 2.",
+                    "path": "assets/articles/volume1/issue2/article_2"
+                },
+                "3": {
+                    "Title": "ಆಧುನಿಕ ಮಹಿಳಾ ಕಾವ್ಯದಲ್ಲಿ ಅಕ್ಕ ಮಹಾದೇವಿ -ಸ್ತ್ರೀತ್ವದ ಪ್ರತೀಕ",
+                    "Author": "ಅಂಬುಜ .ವೈ",
+                    "Abstract": "Abstract for article 3.",
+                    "path": "assets/articles/volume1/issue2/article_3"
+                },
+                "4": {
+                    "Title": "ಧರ್ಮ ಮತ್ತು ಮಹಿಳೆ",
+                    "Author": "ಡಾ. ಹನುಮಂತರಾಯಪ್ಪ ಎಸ್.ಬಿ.",
+                    "Abstract": "Abstract for article 4.",
+                    "path": "assets/articles/volume1/issue2/article_4"
+                },
+                "5": {
+                    "Title": "ದಲಿತ ಸಾಹಿತ್ಯಕ್ಕೆ ಹೊಸಭಾಷ್ಯ ಬರೆದ ದಲಿತ ಆತ್ಮಕತೆಗಳು",
+                    "Author": "ರಂಗಧಾಮಯ್ಯ",
+                    "Abstract": "Abstract for article 5.",
+                    "path": "assets/articles/volume1/issue2/article_5"
+                },
+                "6": {
+                    "Title": "ಸಾAಸ್ಕೃತಿಕ ನಾಯಕ ಜುಂಜಪ್ಪನ ಕಾವ್ಯ : ಸಾಹಿತ್ಯಿಕ ಅನುಸಂಧಾನ",
+                    "Author": "ಡಾ. ಮುರಳಿಕೃಷ್ಣ ಬಿ.ಎಂ.",
+                    "Abstract": "Abstract for article 6.",
+                    "path": "assets/articles/volume1/issue2/article_6"
+                },
+                "7": {
+                    "Title": "ಸಾಮಾಜಿಕ ಜಾಲತಾಣಗಳ ಪ್ರಭಾವ ಮತ್ತು ಪರಿಣಾಮ",
+                    "Author": "ಡಾ.ವಿಠ್ಠಲ ತಳವಾರ",
+                    "Abstract": "Abstract for article 7.",
+                    "path": "assets/articles/volume1/issue2/article_7"
+                },
+                "8": {
+                    "Title": "ಅಂಬೇಡ್ಕರ್ ಪ್ರಭಾವದಿಂದ ಇತಿಹಾಸ ನಿರ್ಮಿಸಿದ ಮಹಿಳೆಯರ ತೆರೆಮರೆಯ ನಿಜಕಥನ",
+                    "Author": "ಡಾ. ಸುಬ್ರಮಣ್ಯಸ್ವಾಮಿ",
+                    "Abstract": "Abstract for article 8.",
+                    "path": "assets/articles/volume1/issue2/article_8"
+                },
+                "9": {
+                    "Title": "ಹಸಿವು : ವಚನಗಳಲ್ಲಿ ನಿರ್ವಚನ",
+                    "Author": "ಡಾ. ವೆಂಕಟೇಶಯ್ಯ ಕೆ.ಎಂ",
+                    "Abstract": "Abstract for article 9.",
+                    "path": "assets/articles/volume1/issue2/article_9"
+                },
+                "10": {
+                    "Title": "ತಳಸಮುದಾಯದ ಮಹಿಳಾ ವಚನಕಾರ್ತಿಯರು : ಸಮಕಾಲೀನ ಸ್ಪಂದನೆ",
+                    "Author": "ಡಾ. ಸೋನಿಯಾ ಬಿ.,",
+                    "Abstract": "Abstract for article 10.",
+                    "path": "assets/articles/volume1/issue2/article_10"
+                },
+                "11": {
+                    "Title": "ವಚನ ಯುಗ: ಬಸವಣ್ಣನಿಗೆ ಎದುರಾದÀ ಬಿಕ್ಕಟ್ಟುಗಳು",
+                    "Author": "ಡಾ. ದೀಪಿಕ ಬಿ.",
+                    "Abstract": "Abstract for article 11.",
+                    "path": "assets/articles/volume1/issue2/article_11"
+                },
+                "12": {
+                    "Title": "ವೈದ್ಯಕೀಯ ಪದವಿಗಾಗಿ ಹೋರಾಡಿದ ಮೊದಲ ಮಹಿಳೆ ಕದಂಬಿನಿ ಗಂಗೂಲಿ",
+                    "Author": "ಡಾ. ಮಾರುತಿ ಹೆಚ್",
+                    "Abstract": "Abstract for article 12.",
+                    "path": "assets/articles/volume1/issue2/article_12"
+                }
+            }
         }
-
     }
 }

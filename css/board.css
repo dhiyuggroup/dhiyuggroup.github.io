@@ -1,8 +1,8 @@
 /* =========================
-   Editorial Board (Premium)
+   Editorial Board (Premium+)
    ========================= */
 
-/* Background accent */
+/* Background accent (theme) */
 body {
   background:
     radial-gradient(1200px 500px at 50% -10%, rgba(247,201,72,.12), transparent 60%),
@@ -14,110 +14,116 @@ body {
   background: #fff;
   border-bottom: 1px solid rgba(0,0,0,.06);
   box-shadow: var(--sp-shadow, 0 8px 20px rgba(0,0,0,.08));
-  padding: 22px 1.25rem;
+  padding: 26px 1.25rem 22px;
   text-align: center;
 }
 .board-header h1 {
   font-family: "Noto Serif Kannada", serif;
   color: var(--sp-brown-800, #3b220d);
-  font-size: clamp(1.5rem, 3.2vw, 2.15rem);
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem);
   letter-spacing: .2px;
 }
 .board-header p {
   color: var(--sp-brown-600, #6b3d1c);
   margin-top: 6px;
-  font-size: 1.02rem;
+  font-size: 1.03rem;
 }
 
 /* Main container */
 .board-main.sp-container {
-  max-width: 980px;
-  margin: 18px auto 28px;
+  max-width: 1100px;              /* a bit wider for multi-column elegance */
+  margin: 22px auto 32px;
   padding: 0 1.25rem;
 }
 
-/* Section heading */
+/* ===== Section as a responsive grid =====
+   h2 occupies full row; member cards flow into columns */
 .board-section {
-  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* desktop: 3–4 cols */
+  gap: 16px;
+  align-items: start;
+  margin-top: 26px;
 }
 .board-section h2 {
+  grid-column: 1 / -1;           /* heading spans all columns */
   display: inline-flex;
   align-items: center;
-  gap: .5rem;
+  gap: .55rem;
   font-weight: 800;
   color: var(--sp-brown-800, #3b220d);
-  font-size: 1.25rem;
-  margin: 14px 0 14px;
-  padding-bottom: 6px;
+  font-size: 1.28rem;
+  margin: 0 0 2px;
+  padding-bottom: 8px;
   border-bottom: 2px solid var(--sp-gold-500, #f7c948);
 }
 
-/* Member card */
+/* Member card (premium) */
 .board-member {
   background: #fff;
-  border: 1px solid rgba(0,0,0,.06);
   border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.06);
+  /* subtle gold edge on the left for polish */
+  background-image:
+    linear-gradient(180deg, rgba(247,201,72,.35), rgba(247,201,72,0) 40%),
+    linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+  background-size: 4px 100%, calc(100% - 0px) 100%;
+  background-position: left top, right top;
   box-shadow: var(--sp-shadow, 0 8px 20px rgba(0,0,0,.08));
-  padding: 16px;
-  margin-bottom: 14px;
+  padding: 16px 16px 14px 18px;
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 .board-member:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(59,34,13,0.12);
-  border-color: rgba(0,0,0,.08);
+  box-shadow: 0 16px 34px rgba(59,34,13,0.13);
+  border-color: rgba(0,0,0,.09);
 }
 
 /* Member text */
 .board-member h3 {
   font-weight: 800;
   color: var(--sp-brown-800, #3b220d);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   letter-spacing: .2px;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   word-break: break-word;
   overflow-wrap: anywhere;
 }
 .board-member p {
   color: var(--sp-brown-600, #6b3d1c);
   font-size: .98rem;
-  line-height: 1.45;
-  margin-top: 4px;
+  line-height: 1.5;
+  margin-top: 6px;
 }
 
-/* Phone label */
+/* Emphasis labels (e.g., phone) */
 .board-member span[data-i18n="label_phone"] {
   font-weight: 800;
   color: var(--sp-brown-800, #3b220d);
 }
 
-/* Links */
+/* Links: premium states */
 .board-member a {
   color: var(--sp-red-700, #c51f1f);
   font-weight: 700;
   text-decoration: none;
   border-bottom: 1px dashed rgba(197,31,31,.35);
-  transition: color .15s ease, border-color .15s ease;
+  transition: color .15s ease, border-color .15s ease, background-color .15s ease;
   word-break: break-word;
 }
 .board-member a:hover {
   color: var(--sp-red-800, #a81717);
   border-color: rgba(168,23,23,.55);
+  background-color: rgba(197,31,31,.06);
+}
+.board-member a:focus-visible {
+  outline: 3px solid var(--sp-gold-500, #f7c948);
+  outline-offset: 2px;
+  border-color: transparent;
 }
 
-/* Optional grid layout (desktop: 2-column) */
-@media (min-width: 820px) {
-  .board-section .board-member {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 8px 14px;
-  }
-  .board-section .board-member h3 {
-    grid-column: 1 / -1;
-  }
-}
-
-/* Chips (if needed for tags/highlights) */
+/* Chips (optional tags/highlights) */
 .board-chip {
   display: inline-flex;
   align-items: center;
@@ -141,24 +147,39 @@ body {
 
 /* Alert card (fallbacks/errors) */
 .alert-card {
-  margin-top:10px;
+  grid-column: 1 / -1;           /* full width in the grid */
+  margin-top: 4px;
   background:#fff;
   border:1px solid rgba(0,0,0,.06);
   border-radius:12px;
   padding:14px;
   box-shadow: var(--sp-shadow, 0 8px 20px rgba(0,0,0,.08));
 }
-.alert-card strong {
-  color: var(--sp-brown-800,#3b220d);
-}
-.alert-card div {
-  margin-top:6px;
-  color:#6b3d1caa;
+.alert-card strong { color: var(--sp-brown-800,#3b220d); }
+.alert-card div { margin-top:6px; color:#6b3d1caa; }
+
+/* ===== Desktop polish ===== */
+@media (min-width: 1020px) {
+  .board-main.sp-container { max-width: 1200px; }
+  .board-section { gap: 18px; }
+  .board-member { padding: 18px 18px 16px 20px; }
+  .board-member h3 { font-size: 1.12rem; }
 }
 
-/* Mobile tweaks */
-@media (max-width: 600px) {
-  .board-header h1 { font-size: 1.4rem; }
+/* ===== Tablet tweaks ===== */
+@media (min-width: 700px) and (max-width: 1019px) {
+  .board-section {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* comfortable 2–3 cols */
+  }
+}
+
+/* ===== Mobile tweaks ===== */
+@media (max-width: 699px) {
+  .board-header h1 { font-size: 1.45rem; }
+  .board-section {
+    grid-template-columns: 1fr;  /* single column for small screens */
+    gap: 12px;
+  }
   .board-member { padding: 14px; }
-  .board-member h3 { font-size: 1rem; }
+  .board-member h3 { font-size: 1rem; margin-bottom: 4px; }
 }
