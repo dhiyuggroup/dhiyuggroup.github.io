@@ -1,0 +1,56 @@
+/* Archive page styles */
+#archive-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#archive-list li {
+  background: var(--sp-cream-100);
+  border-radius: 10px;
+  box-shadow: var(--sp-shadow);
+  margin-bottom: 18px;
+  padding: 18px 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 1.13rem;
+  transition: box-shadow 0.2s;
+}
+
+#archive-list li:hover {
+  box-shadow: 0 12px 28px rgba(59,34,13,0.12);
+}
+
+#archive-list strong {
+  color: var(--sp-brown-800);
+  margin-right: 8px;
+  font-weight: 700;
+}
+
+#archive-list a {
+  color: var(--sp-red-700);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+#archive-list a:hover {
+  color: var(--sp-red-800);
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  #archive-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1rem;
+    padding: 14px 12px;
+  }
+  #archive-list strong, #archive-list a {
+    margin-bottom: 4px;
+  }
+}

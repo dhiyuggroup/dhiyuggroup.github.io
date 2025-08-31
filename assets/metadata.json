@@ -1,0 +1,72 @@
+{
+    "Year": "2025",
+    "Volume": "1",
+    "Issue": {
+        "1": {
+            "Period": "March-April",
+            "Articles": {
+                "1": {
+                    "Title": "ಎಲ್. ಹನುಮಂತಯ್ಯ ಅವರ ಕಾವ್ಯದಲ್ಲಿ ದಲಿತತ್ವದ ಸಾಂಸ್ಕೃತಿಕ ನೆಲೆಗಳು",
+                    "Author": "ಡಾ.ಜಗದೀಶ್ ಬಾಬು ಬಿ.ವಿ",
+                    "Abstract": "Abstract for article 1.",
+                    "path": "assets/articles/volume1/issue1/article_1" 
+                },
+                "2": {
+                    "Title": "ಏಕಲವ್ಯನ ಮೂರು ಚಿತ್ರಗಳು",
+                    "Author": "ಆದಿನಾರಾಯಣ, - ಪ್ರೊ. ಅಣ್ಣಮ್ಮ",
+                    "Abstract": "Abstract for article 2.",
+                    "path": "assets/articles/volume1/issue1/article_2"
+                },
+                "3": {
+                    "Title": "ಮಲೆಗಳಲ್ಲಿ ಮದುಮಗಳು ಕಾದಂಬರಿಯಲ್ಲಿ ಮನುಷ್ಯ ಸಂಬಂಧಗಳ ಅನಾವರಣ",
+                    "Author": "ನವೀನ್ ಕುಮಾರ್ ಎನ್",
+                    "Abstract": "Abstract for article 3.",
+                    "path": "assets/articles/volume1/issue1/article_3"
+                },
+                "4": {
+                    "Title": "ಬಂಡಾಯ ಕಾವ್ಯದಲ್ಲಿ ಜಾನಪದೀಯ ಅಂಶಗಳು",
+                    "Author": "ಡಾ. ಚಿಕ್ಕಣ್ಣ. ಬಿ. ಎಸ್.",
+                    "Abstract": "Abstract for article 4.",
+                    "path": "assets/articles/volume1/issue1/article_4"
+                },
+                "5": {
+                    "Title": "ಸಾಹಿತ್ಯ ಮತ್ತು ವರ್ತಮಾನದ ಜೀವನದಲ್ಲಿ ಮಹಿಳೆಯರ ಪಾತ್ರ",
+                    "Author": "ಡಾ. ಶ್ವೇತ. ಎ",
+                    "Abstract": "Abstract for article 5.",
+                    "path": "assets/articles/volume1/issue1/article_5"
+                },
+                "6": {
+                    "Title": "ಬುಡಕಟ್ಟು ಸಂಸ್ಕೃತಿ: ತಾತ್ವಿಕ ವಿಚಾರ",
+                    "Author": "ಡಾ. ನಾರಾಯಣ್ ಕ್ಯಾಸಂಬಳ್ಳಿ",
+                    "Abstract": "Abstract for article 6.",
+                    "path": "assets/articles/volume1/issue1/article_6"
+                },
+                "7": {
+                    "Title": "ಲಂಬಾಣಿ ಜನಾಂಗದ ಶವ ಸಂಸ್ಕಾರಗಳು",
+                    "Author": "ಕಾವೇರಪ್ಪ .ಹೆಚ್.ಎಂ",
+                    "Abstract": "Abstract for article 7.",
+                    "path": "assets/articles/volume1/issue1/article_7"
+                },
+                "8": {
+                    "Title": "ಲಂಕೇಶರ ಕತೆಗಳಲ್ಲಿ ಆಧುನೀಕತೆ",
+                    "Author": "ಡಾ. ಮೃತ್ಯುಂಜಯ .ಎಚ್",
+                    "Abstract": "Abstract for article 8.",
+                    "path": "assets/articles/volume1/issue1/article_8"
+                },
+                "9": {
+                    "Title": "ತ್ರಿವೇಣಿಯವರ ಸಾಹಿತ್ಯದಲ್ಲಿ ಸ್ತ್ರೀ ವಾದಿ ಚಿಂತನೆ",
+                    "Author": "ಡಾ. ಸುಧಾಕರ ಹೆಚ್.",
+                    "Abstract": "Abstract for article 9.",
+                    "path": "assets/articles/volume1/issue1/article_9"
+                },
+                "10": {
+                    "Title": "ಕುವೆಂಪು ಅವರ ಸಾಹಿತ್ಯದಲ್ಲಿ ಮೌಢ್ಯ ವಿರೋಧಿ ನೆಲೆಗಳು",
+                    "Author": "ಸುನಿಲ್‌ಕುಮಾರ್ ವಿ ವಿ",
+                    "Abstract": "Abstract for article 10.",
+                    "path": "assets/articles/volume1/issue1/article_10"
+                }
+            }
+        }
+
+    }
+}

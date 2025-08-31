@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Sahithya Prasthana | Archive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Kannada:wght@600;700&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/archive.css">
+</head>
+<body>
+  <div id="header-include"></div>
+  <main class="sp-container">
+    <h1>ಪತ್ರಿಕೆಯ ಸಂಚಿಕೆಗಳು (Archive)</h1>
+    <div id="archive-list"></div>
+  </main>
+  <div id="footer-include"></div>
+  <script src="/js/include.js"></script>
+  <script src="/js/nav.js"></script>
+  <script>
+    include('#header-include','/partials/header.html')
+      .then(() => include('#footer-include','/partials/footer.html'))
+      .then(() => { if (window.spNavInit) window.spNavInit(); });
+  </script>
+  <script src="/js/lang.js"></script>
+  <script>
+    fetch('assets/metadata.json')
+      .then(response => response.json())
+      .then(data => {
+        const archiveDiv = document.getElementById('archive-list');
+        let html = '<ul>';
+        const year = data.Year || '';
+        const volume = data.Volume || '';
+        const issues = data.Issues || data.Issue;
+        for (const [issueNum, issue] of Object.entries(issues)) {
+          html += `<li>
+            <strong>Year:</strong> ${year} &nbsp; 
+            <strong>Volume:</strong> ${volume} &nbsp; 
+            <strong>Issue:</strong> <a href="issue.html?year=${encodeURIComponent(year)}&volume=${encodeURIComponent(volume)}&issue=${encodeURIComponent(issueNum)}">${issueNum} (${issue.Period})</a>
+          </li>`;
+        }
+        html += '</ul>';
+        archiveDiv.innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById('archive-list').innerHTML = '<p>Archive data could not be loaded.</p>';
+      });
+  </script>
+</body>
+</html>

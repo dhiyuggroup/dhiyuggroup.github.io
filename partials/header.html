@@ -1,0 +1,53 @@
+<header class="sp-header" role="banner">
+  <!-- Language toggle -->
+  <button class="sp-lang" id="langToggle" aria-label="Toggle language" data-i18n="lang_btn">EN</button>
+
+  <!-- Full-width banner -->
+  <div class="sp-header__banner">
+    <img src="/assets/header-banner.png" alt="Sahithya Prasthana Banner">
+  </div>
+
+  <!-- Desktop/Tablet nav -->
+  <nav class="sp-nav" role="navigation" aria-label="Primary">
+    <div class="sp-container">
+      <button class="sp-nav__toggle" id="spNavToggle"
+              aria-controls="spNavLinks" aria-expanded="false"
+              aria-label="Open menu">☰</button>
+
+      <div class="sp-nav__links" id="spNavLinks">
+        <a href="/" data-i18n="nav_home">ಮುಖಪುಟ</a>
+        <a href="/archive.html" data-i18n="nav_archive">ಲೇಖನ ಸಂಗ್ರಹ</a>
+        <a href="/editorial-board.html" data-i18n="nav_board">ಸಂಪಾದಕ ಮಂಡಳಿ</a>
+        <a href="/guidelines.html" data-i18n="nav_submit">ಸಲ್ಲಿಕೆ ಮಾರ್ಗಸೂಚಿ</a>
+        <a href="/about.html" data-i18n="nav_about">ನಮ್ಮ ಬಗ್ಗೆ</a>
+        <a href="/contact.html" data-i18n="nav_contact">ಸಂಪರ್ಕಿಸಿ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile floating menu button (FAB) -->
+  <button class="sp-menu-fab" id="spMenuFab"
+          aria-haspopup="dialog" aria-controls="spMenu" aria-expanded="false"
+          aria-label="Open menu">☰</button>
+
+  <!-- Mobile popup menu -->
+  <div class="sp-menu" id="spMenu" role="dialog" aria-modal="true" aria-label="Mobile menu">
+    <div class="sp-menu__backdrop" data-close="1"></div>
+    <div class="sp-menu__panel" role="document" tabindex="-1">
+      <div class="sp-menu__head">
+        <strong data-i18n="nav_label">Navigate</strong>
+        <button class="sp-menu__close" id="spMenuClose" aria-label="Close menu">×</button>
+      </div>
+      <nav class="sp-menu__links">
+        <a href="/" data-i18n="nav_home">ಮುಖಪುಟ</a>
+        <a href="/archive.html" data-i18n="nav_archive">ಲೇಖನ ಸಂಗ್ರಹ</a>
+        <a href="/editorial-board.html" data-i18n="nav_board">ಸಂಪಾದಕ ಮಂಡಳಿ</a>
+        <a href="/guidelines.html" data-i18n="nav_submit">ಸಲ್ಲಿಕೆ ಮಾರ್ಗಸೂಚಿ</a>
+        <a href="/about.html" data-i18n="nav_about">ನಮ್ಮ ಬಗ್ಗೆ</a>
+        <a href="/contact.html" data-i18n="nav_contact">ಸಂಪರ್ಕಿಸಿ</a>
+      </nav>
+    </div>
+  </div>
+
+  <script src="/js/nav.js"></script>
+</header>

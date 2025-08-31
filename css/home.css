@@ -1,0 +1,21 @@
+/* Homepage-only styles */
+.sp-home__featured{
+  margin:26px auto;
+  padding:24px;
+  border-radius:12px;
+  background:#efe2c6;
+  box-shadow:var(--sp-shadow);
+}
+.sp-home__featured h2{
+  font-family:"Noto Serif Kannada",serif;
+  color:var(--sp-brown-800);
+  font-size:clamp(1.6rem,3.6vw,2.2rem);
+  text-align:center;
+  margin-bottom:10px;
+}
+.sp-home__featured p{
+  max-width:800px;margin:0 auto 16px;text-align:center;
+}
+.sp-home__cta{
+  display:flex;justify-content:center;
+}

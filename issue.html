@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Issue Articles | Sahithya Prasthana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Kannada:wght@600;700&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/issue.css">
+</head>
+<body>
+  <div id="header-include"></div>
+  <main class="sp-container">
+    <button onclick="window.history.back()" style="margin-bottom:1em;">← Back</button>
+    <h1 id="issue-title">ಸಂಚಿಕೆ</h1>
+    <div id="articles-list"></div>
+  </main>
+  <div id="footer-include"></div>
+  <script src="/js/include.js"></script>
+  <script src="/js/nav.js"></script>
+  <script>
+    include('#header-include','/partials/header.html')
+      .then(() => include('#footer-include','/partials/footer.html'))
+      .then(() => { if (window.spNavInit) window.spNavInit(); });
+  </script>
+  <script src="/js/lang.js"></script>
+  <script>
+    // Parse query params
+    function getQueryParam(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+    const year = getQueryParam('year');
+    const volume = getQueryParam('volume');
+    const issueNum = getQueryParam('issue');
+
+    fetch('assets/metadata.json')
+      .then(response => response.json())
+      .then(data => {
+        const issues = data.Issues || data.Issue;
+        const issue = issues[issueNum];
+        document.getElementById('issue-title').textContent = `Year: ${year} | Volume: ${volume} | Issue: ${issueNum} (${issue.Period})`;
+        let html = '<ol>';
+        for (const [artNum, article] of Object.entries(issue.Articles)) {
+          // Assume PDF is at article.path + '.pdf'
+          html += `<li>
+            <a href="${article.path}.pdf" target="_blank">
+
+              <strong>${artNum}. ${article.Title}</strong>
+            </a><br>
+            <span>${article.Author}</span>
+          </li>`;
+        }
+        html += '</ol>';
+        document.getElementById('articles-list').innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById('articles-list').innerHTML = '<p>Articles could not be loaded.</p>';
+      });
+  </script>
+</body>
+</html>

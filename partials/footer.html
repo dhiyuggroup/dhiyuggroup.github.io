@@ -1,0 +1,9 @@
+<footer class="sp-footer" role="contentinfo">
+  <div class="sp-container sp-footer__row">
+    <p>© <span id="spYear"></span> Sahithya Prasthana • All rights reserved.</p>
+  </div>
+  <script>
+    // Keep footer self-contained
+    (function(){ var y = document.getElementById('spYear'); if (y) y.textContent = new Date().getFullYear(); })();
+  </script>
+</footer>
