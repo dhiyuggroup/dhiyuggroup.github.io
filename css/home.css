@@ -246,84 +246,11 @@
   color:var(--sp-brown-600);
 }
 
-/* Issue page styles */
-#issue-title {
-  font-family: "Noto Serif Kannada", serif;
-  color: var(--sp-brown-800);
-  font-size: clamp(1.5rem, 3vw, 2.1rem);
-  margin-bottom: 18px;
-  text-align: center;
-}
-
-#articles-list ol {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 700px;
-}
-
-#articles-list li {
-  background: var(--sp-cream-100);
-  border-radius: 10px;
-  box-shadow: var(--sp-shadow);
-  margin-bottom: 18px;
-  padding: 18px 22px;
-  font-size: 1.13rem;
-  transition: box-shadow 0.2s;
-}
-
-#articles-list li:hover {
-  box-shadow: 0 12px 28px rgba(59,34,13,0.12);
-}
-
-#articles-list strong {
-  color: var(--sp-brown-800);
-  font-weight: 700;
-}
-
-#articles-list a {
-  color: var(--sp-brown-800);
-  text-decoration: none;
-  font-weight: 700;
-  transition: color 0.2s;
-}
-
-#articles-list a:hover {
-  color: var(--sp-red-800);
-  text-decoration: underline;
-}
-
-#articles-list span {
-  color: var(--sp-brown-600);
-  font-size: 1rem;
-}
-
-button[onclick*="history.back"] {
-  background: var(--sp-red-700);
-  color: var(--sp-white);
-  border: none;
-  border-radius: 8px;
-  padding: .6em 1.2em;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-  margin-bottom: 1.5em;
-  transition: background 0.2s;
-}
-button[onclick*="history.back"]:hover {
-  background: var(--sp-red-800);
-}
+/* Issue page styles - removed, now handled by issue.css */
 
 /* Responsive tweaks */
 @media (max-width:600px){
   .sp-archive-card{ padding:14px; border-radius:12px; }
   .sp-card-title{ font-size:1rem; }
   .sp-issue-item a{ padding:.7rem .8rem; }
-  #articles-list li {
-    font-size: 1rem;
-    padding: 14px 12px;
-  }
-  #issue-title {
-    font-size: 1.2rem;
-  }
 }
