@@ -174,7 +174,8 @@
     "contact_subtitle": "We'd love to hear from you! Reach out to us via the following:",
     "contact_email_label": "Email",
     "contact_phone_label": "Phone",
-    "contact_address_label": "Address"
+    "contact_address_label": "Address",
+    "contact_publisher_label": "Publisher"
 
   },
   "kn": {
@@ -347,6 +348,7 @@
     "contact_subtitle": "ನಿಮ್ಮಿಂದ ಕೇಳಲು ನಾವು ಇಷ್ಟಪಡುತ್ತೇವೆ! ಈ ಕೆಳಗಿನ ಮೂಲಕ ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ:",
     "contact_email_label": "ಇಮೇಲ್",
     "contact_phone_label": "ದೂರವಾಣಿ",
-    "contact_address_label": "ವಿಳಾಸ"
+    "contact_address_label": "ವಿಳಾಸ",
+    "contact_publisher_label": "ಪ್ರಕಾಶಕರು"
   }
 }
