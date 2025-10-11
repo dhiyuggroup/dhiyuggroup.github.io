@@ -111,11 +111,10 @@ body {
   border-radius: 14px;
   box-shadow: var(--sp-shadow, 0 8px 20px rgba(0,0,0,.08));
   border: 1px solid rgba(0,0,0,.06);
-  padding: 16px 16px;
+  padding: 16px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 12px;
-  align-items: start;
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 .sp-article:hover {
@@ -129,6 +128,7 @@ body {
   flex-direction: column;
   gap: 6px;
   min-width: 0;
+  flex: 1;
 }
 .sp-article-title {
   font-weight: 800;
@@ -151,21 +151,25 @@ body {
   gap: 8px;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  margin-top: 4px;
 }
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: .52rem .8rem;
+  justify-content: center;
+  gap: 6px;
+  padding: .58rem .9rem;
   font-weight: 700;
   border-radius: 10px;
   text-decoration: none;
   white-space: nowrap;
+  font-size: 0.95rem;
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
   border: 1px solid transparent;
+  flex: 0 1 auto;
 }
-.btn svg { display: inline-block; }
+.btn svg { display: inline-block; width: 14px; height: 14px; }
 
 .btn.view {
   color: #fff;
@@ -201,7 +205,15 @@ body {
 @media (max-width: 640px) {
   .sp-ol { grid-template-columns: 1fr; }
   .sp-article { padding: 14px; }
-  .sp-article-actions { width: 100%; justify-content: flex-start; }
+  .sp-article-actions { 
+    width: 100%; 
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .btn {
+    flex: 1 1 calc(50% - 5px);
+    min-width: 120px;
+  }
   .sp-issue-title { font-size: 1.35rem; }
 }
 
@@ -219,7 +231,7 @@ body {
 @media (max-width: 700px) {
   .sp-article {
     flex-direction: column;
-    align-items: stretch;    /* stretch inner sections full width */
+    align-items: stretch;
   }
   .sp-article-main {
     gap: 4px;
@@ -227,16 +239,18 @@ body {
   .sp-article-actions {
     width: 100%;
     justify-content: flex-start;
-    gap: 8px;
-    margin-top: 8px;
+    gap: 10px;
+    margin-top: 10px;
   }
 }
 
-/* 3) Buttons: tidy stacking on narrow screens */
+/* 3) Buttons: side-by-side on all phones */
 @media (max-width: 560px) {
   .sp-article-actions .btn {
-    flex: 1 1 100%;
+    flex: 1 1 calc(50% - 5px);
     justify-content: center;
+    font-size: 0.9rem;
+    padding: .55rem .75rem;
   }
 }
 

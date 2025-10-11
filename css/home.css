@@ -131,3 +131,199 @@
 @media (max-width: 480px){
   .home-issue__actions .sp-btn { flex: 1 1 100%; }
 }
+
+/* Archive page styles */
+.sp-archive-title {
+  font-family: "Noto Serif Kannada", serif;
+  font-size: clamp(1.6rem, 3.2vw, 2rem);
+  text-align: center;
+  margin: 1.5rem 0;
+  color: var(--sp-brown-800);
+}
+
+:root{
+  --sp-card-grad-start: linear-gradient(135deg,#fff8f0,#fff3e6);
+  --sp-card-grad-accent: linear-gradient(135deg,#fdf0d6,#f7d98a);
+}
+
+/* Archive grid */
+.sp-archive-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+  margin:28px auto;
+  max-width:1100px;
+  padding:8px;
+}
+
+/* Card */
+.sp-archive-card{
+  background:var(--sp-card-grad-start);
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 12px 30px rgba(43,29,12,0.12);
+  border:1px solid rgba(59,34,13,0.06);
+  display:flex;
+  flex-direction:column;
+  transition:transform .16s ease, box-shadow .16s ease;
+}
+
+.sp-archive-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 22px 48px rgba(43,29,12,0.16);
+}
+
+/* Header */
+.sp-card-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.sp-card-title{
+  font-family:"Noto Serif Kannada",serif;
+  color:var(--sp-brown-800);
+  font-size:1.15rem;
+  font-weight:700;
+}
+
+.sp-card-meta{
+  font-size:0.95rem;
+  color:var(--sp-brown-600);
+  background:var(--sp-cream-100);
+  padding:.35rem .6rem;
+  border-radius:8px;
+  box-shadow:inset 0 -2px 0 rgba(0,0,0,0.02);
+}
+
+/* Issues list */
+.sp-issue-list{
+  list-style:none;
+  margin:8px 0 0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.sp-issue-item a{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  text-decoration:none;
+  color:var(--sp-brown-800);
+  padding:.8rem 1rem;
+  border-radius:10px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent);
+  transition:background .12s ease, transform .12s ease;
+  border:1px solid rgba(59,34,13,0.04);
+}
+
+.sp-issue-item a:hover{
+  background:var(--sp-card-grad-accent);
+  transform:translateY(-3px);
+  color:var(--sp-brown-800);
+  text-decoration:none;
+}
+
+.sp-issue-label{
+  font-weight:700;
+  color:var(--sp-brown-800);
+}
+
+.sp-issue-period{
+  font-size:0.9rem;
+  color:var(--sp-brown-600);
+  margin-left:12px;
+}
+
+/* Small decorative footer in card */
+.sp-card-foot{
+  margin-top:12px;
+  font-size:0.85rem;
+  color:var(--sp-brown-600);
+}
+
+/* Issue page styles */
+#issue-title {
+  font-family: "Noto Serif Kannada", serif;
+  color: var(--sp-brown-800);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+#articles-list ol {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+#articles-list li {
+  background: var(--sp-cream-100);
+  border-radius: 10px;
+  box-shadow: var(--sp-shadow);
+  margin-bottom: 18px;
+  padding: 18px 22px;
+  font-size: 1.13rem;
+  transition: box-shadow 0.2s;
+}
+
+#articles-list li:hover {
+  box-shadow: 0 12px 28px rgba(59,34,13,0.12);
+}
+
+#articles-list strong {
+  color: var(--sp-brown-800);
+  font-weight: 700;
+}
+
+#articles-list a {
+  color: var(--sp-red-700);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+#articles-list a:hover {
+  color: var(--sp-red-800);
+  text-decoration: underline;
+}
+
+#articles-list span {
+  color: var(--sp-brown-600);
+  font-size: 1rem;
+}
+
+button[onclick*="history.back"] {
+  background: var(--sp-red-700);
+  color: var(--sp-white);
+  border: none;
+  border-radius: 8px;
+  padding: .6em 1.2em;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 1.5em;
+  transition: background 0.2s;
+}
+button[onclick*="history.back"]:hover {
+  background: var(--sp-red-800);
+}
+
+/* Responsive tweaks */
+@media (max-width:600px){
+  .sp-archive-card{ padding:14px; border-radius:12px; }
+  .sp-card-title{ font-size:1rem; }
+  .sp-issue-item a{ padding:.7rem .8rem; }
+  #articles-list li {
+    font-size: 1rem;
+    padding: 14px 12px;
+  }
+  #issue-title {
+    font-size: 1.2rem;
+  }
+}

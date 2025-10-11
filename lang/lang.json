@@ -168,7 +168,13 @@
     "about_submit": "Submit",
 
     "label_email": "Email",
-    "label_address": "Address"
+    "label_address": "Address",
+
+    "contact_title": "Contact Us",
+    "contact_subtitle": "We'd love to hear from you! Reach out to us via the following:",
+    "contact_email_label": "Email",
+    "contact_phone_label": "Phone",
+    "contact_address_label": "Address"
 
   },
   "kn": {
@@ -335,7 +341,12 @@
     "about_submit": "ಸಲ್ಲಿಸಿ",
 
     "label_email": "ಇಮೇಲ್",
+    "label_address": "ವಿಳಾಸ",
 
-    "label_address": "ವಿಳಾಸ"
+    "contact_title": "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
+    "contact_subtitle": "ನಿಮ್ಮಿಂದ ಕೇಳಲು ನಾವು ಇಷ್ಟಪಡುತ್ತೇವೆ! ಈ ಕೆಳಗಿನ ಮೂಲಕ ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ:",
+    "contact_email_label": "ಇಮೇಲ್",
+    "contact_phone_label": "ದೂರವಾಣಿ",
+    "contact_address_label": "ವಿಳಾಸ"
   }
 }
