@@ -175,7 +175,8 @@
     "contact_email_label": "Email",
     "contact_phone_label": "Phone",
     "contact_address_label": "Address",
-    "contact_publisher_label": "Publisher"
+  "contact_publisher_label": "Publisher",
+  "contact_chief_editor_label": "Chief Editor"
 
   },
   "kn": {
@@ -349,6 +350,7 @@
     "contact_email_label": "ಇಮೇಲ್",
     "contact_phone_label": "ದೂರವಾಣಿ",
     "contact_address_label": "ವಿಳಾಸ",
-    "contact_publisher_label": "ಪ್ರಕಾಶಕರು"
+  "contact_publisher_label": "ಪ್ರಕಾಶಕರು",
+  "contact_chief_editor_label": "ಮುಖ್ಯ ಸಂಪಾದಕ"
   }
 }

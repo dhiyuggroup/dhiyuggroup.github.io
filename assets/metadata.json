@@ -9,61 +9,71 @@
                     "Title": "ಎಲ್. ಹನುಮಂತಯ್ಯ ಅವರ ಕಾವ್ಯದಲ್ಲಿ ದಲಿತತ್ವದ ಸಾಂಸ್ಕೃತಿಕ ನೆಲೆಗಳು",
                     "Author": "ಡಾ.ಜಗದೀಶ್ ಬಾಬು ಬಿ.ವಿ",
                     "Abstract": "Abstract for article 1.",
-                    "path": "assets/articles/volume1/issue1/article_1" 
+                    "path": "assets/articles/volume1/issue1/article_1",
+                    "pageRange": "1–14"
                 },
                 "2": {
                     "Title": "ಏಕಲವ್ಯನ ಮೂರು ಚಿತ್ರಗಳು",
                     "Author": "ಆದಿನಾರಾಯಣ, - ಪ್ರೊ. ಅಣ್ಣಮ್ಮ",
                     "Abstract": "Abstract for article 2.",
-                    "path": "assets/articles/volume1/issue1/article_2"
+                    "path": "assets/articles/volume1/issue1/article_2",
+                    "pageRange": "15-27"
                 },
                 "3": {
                     "Title": "ಮಲೆಗಳಲ್ಲಿ ಮದುಮಗಳು ಕಾದಂಬರಿಯಲ್ಲಿ ಮನುಷ್ಯ ಸಂಬಂಧಗಳ ಅನಾವರಣ",
                     "Author": "ನವೀನ್ ಕುಮಾರ್ ಎನ್",
                     "Abstract": "Abstract for article 3.",
-                    "path": "assets/articles/volume1/issue1/article_3"
+                    "path": "assets/articles/volume1/issue1/article_3",
+                    "pageRange": "28–38"
                 },
                 "4": {
                     "Title": "ಬಂಡಾಯ ಕಾವ್ಯದಲ್ಲಿ ಜಾನಪದೀಯ ಅಂಶಗಳು",
                     "Author": "ಡಾ. ಚಿಕ್ಕಣ್ಣ. ಬಿ. ಎಸ್.",
                     "Abstract": "Abstract for article 4.",
-                    "path": "assets/articles/volume1/issue1/article_4"
+                    "path": "assets/articles/volume1/issue1/article_4",
+                    "pageRange": "39–54"
                 },
                 "5": {
                     "Title": "ಸಾಹಿತ್ಯ ಮತ್ತು ವರ್ತಮಾನದ ಜೀವನದಲ್ಲಿ ಮಹಿಳೆಯರ ಪಾತ್ರ",
                     "Author": "ಡಾ. ಶ್ವೇತ. ಎ",
                     "Abstract": "Abstract for article 5.",
-                    "path": "assets/articles/volume1/issue1/article_5"
+                    "path": "assets/articles/volume1/issue1/article_5",
+                    "pageRange": "55-62"
                 },
                 "6": {
                     "Title": "ಬುಡಕಟ್ಟು ಸಂಸ್ಕೃತಿ: ತಾತ್ವಿಕ ವಿಚಾರ",
                     "Author": "ಡಾ. ನಾರಾಯಣ್ ಕ್ಯಾಸಂಬಳ್ಳಿ",
                     "Abstract": "Abstract for article 6.",
-                    "path": "assets/articles/volume1/issue1/article_6"
+                    "path": "assets/articles/volume1/issue1/article_6",
+                    "pageRange": "63–70"
                 },
                 "7": {
                     "Title": "ಲಂಬಾಣಿ ಜನಾಂಗದ ಶವ ಸಂಸ್ಕಾರಗಳು",
                     "Author": "ಕಾವೇರಪ್ಪ .ಹೆಚ್.ಎಂ",
                     "Abstract": "Abstract for article 7.",
-                    "path": "assets/articles/volume1/issue1/article_7"
+                    "path": "assets/articles/volume1/issue1/article_7",
+                    "pageRange": "71-75"
                 },
                 "8": {
                     "Title": "ಲಂಕೇಶರ ಕತೆಗಳಲ್ಲಿ ಆಧುನೀಕತೆ",
                     "Author": "ಡಾ. ಮೃತ್ಯುಂಜಯ .ಎಚ್",
                     "Abstract": "Abstract for article 8.",
-                    "path": "assets/articles/volume1/issue1/article_8"
+                    "path": "assets/articles/volume1/issue1/article_8",
+                    "pageRange": "76–82"
                 },
                 "9": {
                     "Title": "ತ್ರಿವೇಣಿಯವರ ಸಾಹಿತ್ಯದಲ್ಲಿ ಸ್ತ್ರೀ ವಾದಿ ಚಿಂತನೆ",
                     "Author": "ಡಾ. ಸುಧಾಕರ ಹೆಚ್.",
                     "Abstract": "Abstract for article 9.",
-                    "path": "assets/articles/volume1/issue1/article_9"
+                    "path": "assets/articles/volume1/issue1/article_9",
+                    "pageRange": "83-96"
                 },
                 "10": {
                     "Title": "ಕುವೆಂಪು ಅವರ ಸಾಹಿತ್ಯದಲ್ಲಿ ಮೌಢ್ಯ ವಿರೋಧಿ ನೆಲೆಗಳು",
                     "Author": "ಸುನಿಲ್‌ಕುಮಾರ್ ವಿ ವಿ",
                     "Abstract": "Abstract for article 10.",
-                    "path": "assets/articles/volume1/issue1/article_10"
+                    "path": "assets/articles/volume1/issue1/article_10",
+                    "pageRange": "97-102"
                 }
             }
         },
@@ -74,73 +84,85 @@
                     "Title": "ಶಾಸನಗಳಲ್ಲಿ ಸ್ತ್ರೀ ಸಂವೇದನೆಯ ಸ್ವರೂಪ",
                     "Author": "ಡಾ. ಕೆಂಗಲ್ ಮೂರ್ತಿ ಕೆ. ಜಿ.",
                     "Abstract": "Abstract for article 1.",
-                    "path": "assets/articles/volume1/issue2/article_1"
+                    "path": "assets/articles/volume1/issue2/article_1",
+                    "pageRange": "1-6"
                 },
                 "2": {
                     "Title": "ಅವಧೂತ ಪರಂಪರೆಯಲ್ಲಿ ಗುರು-ಶಿಷ್ಯರ ಸಂಬಂಧ",
                     "Author": "ರವೀಂದ್ರ ಕೆ. ವಿ.",
                     "Abstract": "Abstract for article 2.",
-                    "path": "assets/articles/volume1/issue2/article_2"
+                    "path": "assets/articles/volume1/issue2/article_2",
+                    "pageRange": "7-12"
                 },
                 "3": {
                     "Title": "ಆಧುನಿಕ ಮಹಿಳಾ ಕಾವ್ಯದಲ್ಲಿ ಅಕ್ಕ ಮಹಾದೇವಿ -ಸ್ತ್ರೀತ್ವದ ಪ್ರತೀಕ",
                     "Author": "ಅಂಬುಜ .ವೈ",
                     "Abstract": "Abstract for article 3.",
-                    "path": "assets/articles/volume1/issue2/article_3"
+                    "path": "assets/articles/volume1/issue2/article_3",
+                    "pageRange": "13-20"
                 },
                 "4": {
                     "Title": "ಧರ್ಮ ಮತ್ತು ಮಹಿಳೆ",
                     "Author": "ಡಾ. ಹನುಮಂತರಾಯಪ್ಪ ಎಸ್.ಬಿ.",
                     "Abstract": "Abstract for article 4.",
-                    "path": "assets/articles/volume1/issue2/article_4"
+                    "path": "assets/articles/volume1/issue2/article_4",
+                    "pageRange": "21-27"
                 },
                 "5": {
                     "Title": "ದಲಿತ ಸಾಹಿತ್ಯಕ್ಕೆ ಹೊಸಭಾಷ್ಯ ಬರೆದ ದಲಿತ ಆತ್ಮಕತೆಗಳು",
                     "Author": "ರಂಗಧಾಮಯ್ಯ",
                     "Abstract": "Abstract for article 5.",
-                    "path": "assets/articles/volume1/issue2/article_5"
+                    "path": "assets/articles/volume1/issue2/article_5",
+                    "pageRange": "28-35"
                 },
                 "6": {
-                    "Title": "ಸಾAಸ್ಕೃತಿಕ ನಾಯಕ ಜುಂಜಪ್ಪನ ಕಾವ್ಯ : ಸಾಹಿತ್ಯಿಕ ಅನುಸಂಧಾನ",
+                    "Title": "ಸಾಂಸ್ಕೃತಿಕ ನಾಯಕ ಜುಂಜಪ್ಪನ ಕಾವ್ಯ : ಸಾಹಿತ್ಯಿಕ ಅನುಸಂಧಾನ",
                     "Author": "ಡಾ. ಮುರಳಿಕೃಷ್ಣ ಬಿ.ಎಂ.",
                     "Abstract": "Abstract for article 6.",
-                    "path": "assets/articles/volume1/issue2/article_6"
+                    "path": "assets/articles/volume1/issue2/article_6",
+                    "pageRange": "36-42"
                 },
                 "7": {
                     "Title": "ಸಾಮಾಜಿಕ ಜಾಲತಾಣಗಳ ಪ್ರಭಾವ ಮತ್ತು ಪರಿಣಾಮ",
                     "Author": "ಡಾ.ವಿಠ್ಠಲ ತಳವಾರ",
                     "Abstract": "Abstract for article 7.",
-                    "path": "assets/articles/volume1/issue2/article_7"
+                    "path": "assets/articles/volume1/issue2/article_7",
+                    "pageRange": "43-51"
                 },
                 "8": {
                     "Title": "ಅಂಬೇಡ್ಕರ್ ಪ್ರಭಾವದಿಂದ ಇತಿಹಾಸ ನಿರ್ಮಿಸಿದ ಮಹಿಳೆಯರ ತೆರೆಮರೆಯ ನಿಜಕಥನ",
                     "Author": "ಡಾ. ಸುಬ್ರಮಣ್ಯಸ್ವಾಮಿ",
                     "Abstract": "Abstract for article 8.",
-                    "path": "assets/articles/volume1/issue2/article_8"
+                    "path": "assets/articles/volume1/issue2/article_8",
+                    "pageRange": "52-62"
                 },
                 "9": {
                     "Title": "ಹಸಿವು : ವಚನಗಳಲ್ಲಿ ನಿರ್ವಚನ",
                     "Author": "ಡಾ. ವೆಂಕಟೇಶಯ್ಯ ಕೆ.ಎಂ",
                     "Abstract": "Abstract for article 9.",
-                    "path": "assets/articles/volume1/issue2/article_9"
+                    "path": "assets/articles/volume1/issue2/article_9",
+                    "pageRange": "63-69"
                 },
                 "10": {
                     "Title": "ತಳಸಮುದಾಯದ ಮಹಿಳಾ ವಚನಕಾರ್ತಿಯರು : ಸಮಕಾಲೀನ ಸ್ಪಂದನೆ",
                     "Author": "ಡಾ. ಸೋನಿಯಾ ಬಿ.,",
                     "Abstract": "Abstract for article 10.",
-                    "path": "assets/articles/volume1/issue2/article_10"
+                    "path": "assets/articles/volume1/issue2/article_10",
+                    "pageRange": "70-75"
                 },
                 "11": {
                     "Title": "ವಚನ ಯುಗ: ಬಸವಣ್ಣನಿಗೆ ಎದುರಾದÀ ಬಿಕ್ಕಟ್ಟುಗಳು",
                     "Author": "ಡಾ. ದೀಪಿಕ ಬಿ.",
                     "Abstract": "Abstract for article 11.",
-                    "path": "assets/articles/volume1/issue2/article_11"
+                    "path": "assets/articles/volume1/issue2/article_11",
+                    "pageRange": "76-82"
                 },
                 "12": {
                     "Title": "ವೈದ್ಯಕೀಯ ಪದವಿಗಾಗಿ ಹೋರಾಡಿದ ಮೊದಲ ಮಹಿಳೆ ಕದಂಬಿನಿ ಗಂಗೂಲಿ",
                     "Author": "ಡಾ. ಮಾರುತಿ ಹೆಚ್",
                     "Abstract": "Abstract for article 12.",
-                    "path": "assets/articles/volume1/issue2/article_12"
+                    "path": "assets/articles/volume1/issue2/article_12",
+                    "pageRange": "83-93"
                 }
             }
         }

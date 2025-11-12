@@ -26,9 +26,38 @@
   padding: 2rem;
   box-shadow: 0 12px 30px rgba(43, 29, 12, 0.12);
   border: 1px solid rgba(59, 34, 13, 0.06);
+  margin-top: 2rem;
+}
+
+/* Top contact info section (outside card) */
+.contact-top-info {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-top-info .contact-item {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(59, 34, 13, 0.08);
+}
+
+/* Publisher + Chief Editor area: side-by-side on desktop, stacked on mobile */
+.contact-bottom {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contact-block {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.contact-block .contact-item {
+  background: rgba(255,255,255,0.6);
+  padding: 0.9rem;
+  border-radius: 10px;
 }
 
 .contact-item {
@@ -93,9 +122,13 @@
 }
 
 @media (max-width: 600px) {
+  .contact-main {
+    padding: 0.5rem;
+  }
+
   .contact-card-single {
     padding: 1.5rem;
-    gap: 1rem;
+    margin-top: 1rem;
   }
   
   .contact-item {
@@ -121,5 +154,19 @@
   .contact-info a,
   .contact-info p {
     font-size: 0.95rem;
+  }
+
+  /* Stack publisher and editor on small screens */
+  .contact-bottom {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-block {
+    width: 100%;
+  }
+
+  .contact-top-info {
+    gap: 0.75rem;
   }
 }

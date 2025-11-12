@@ -124,6 +124,7 @@
           items.map(([artNum, article]) => {
             const title  = article?.Title ?? 'Untitled';
             const author = article?.Author ?? '';
+            const pageRange = article?.pageRange ?? article?.PageRange ?? '';
             const base   = article?.path ?? '';
             const pdfUrl = base ? `${base}.pdf` : '#';
 
@@ -132,6 +133,7 @@
                 <div class="sp-article-main">
                   <div class="sp-article-title"><span class="index">${artNum}.</span> ${title}</div>
                   ${author ? `<div class="sp-article-author">${author}</div>` : ``}
+                  ${pageRange ? `<div class="sp-article-pages">ಪುಟಗಳು (Pages): ${pageRange}</div>` : ``}
                 </div>
                 <div class="sp-article-actions">
                   <a class="btn view" href="${pdfUrl}" target="_blank" rel="noopener" aria-label="View PDF of ${title}">

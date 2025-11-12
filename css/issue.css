@@ -144,6 +144,19 @@ body {
   color: var(--sp-brown-600, #6b3d1c);
   font-size: .95rem;
 }
+.sp-article-pages {
+  color: var(--sp-brown-500, #8b5d3c);
+  font-size: .88rem;
+  font-weight: 600;
+  font-style: italic;
+  margin-top: 2px;
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid rgba(197, 31, 31, 0.2);
+  border-bottom: 3px solid rgba(197, 31, 31, 0.35);
+  border-right: 3px solid rgba(197, 31, 31, 0.35);
+  border-radius: 4px;
+}
 
 /* Actions */
 .sp-article-actions {
