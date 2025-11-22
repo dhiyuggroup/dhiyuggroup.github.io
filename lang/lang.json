@@ -17,6 +17,25 @@
 
     "lang_btn": "ಕನ್ನಡ",
 
+    "home_latest_issue": "Latest Issue",
+    "home_quick_links": "Quick Links",
+    "home_learn_more": "Learn more",
+    "home_meet_board": "Meet the board",
+    "home_submit_paper": "Your article",
+    "home_explore_archive": "Explore",
+    "home_highlights": "Highlights",
+    "highlight_bimonthly": "Bi-Monthly Journal",
+    "highlight_multidisciplinary": "Multidisciplinary",
+    "highlight_peer_reviewed": "Peer-Reviewed",
+
+    "label_year": "Year",
+    "label_volume": "Volume",
+    "label_issue": "Issue",
+    "view_issue": "View Issue",
+    "explore_archive": "Explore Archive",
+    "error_data_not_loaded": "Data not loaded.",
+    "error_check_metadata": "Please check",
+
     "eb_title": "Editorial Board",
     "eb_intro": "Honorable members of our editorial board.",
     "eb_sec_editor": "Chief Editor",
@@ -176,7 +195,21 @@
     "contact_phone_label": "Phone",
     "contact_address_label": "Address",
   "contact_publisher_label": "Publisher",
-  "contact_chief_editor_label": "Chief Editor"
+  "contact_chief_editor_label": "Chief Editor",
+
+    "journal_info_title": "Journal Information",
+    "journal_start_label": "Started",
+    "journal_start_year": "2025",
+    "journal_frequency_label": "Publication Frequency",
+    "journal_format_label": "Format",
+    "journal_subjects_label": "Subjects / Domain",
+    "journal_subjects_value": "Kannada literature, language, culture, multidisciplinary humanities",
+    "journal_languages_label": "Languages",
+    "journal_publisher_label": "Publisher",
+    "journal_publisher_address": "Bengaluru, Karnataka, India",
+    "journal_link_guidelines": "Author Guidelines",
+    "journal_link_aims": "Aims & Scope",
+    "journal_link_submission": "Submission Details"
 
   },
   "kn": {
@@ -196,6 +229,25 @@
     "feat_cta": "ಎಲ್ಲಾ ಲೇಖನಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
 
     "lang_btn": "EN",
+
+    "home_latest_issue": "ಇತ್ತೀಚಿನ ಸಂಚಿಕೆ",
+    "home_quick_links": "ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು",
+    "home_learn_more": "ಇನ್ನಷ್ಟು",
+    "home_meet_board": "ಪರಿಚಯ",
+    "home_submit_paper": "ನಿಮ್ಮ ಲೇಖನ",
+    "home_explore_archive": "ಅನ್ವೇಷಿಸಿ",
+    "home_highlights": "ವಿಶೇಷತೆಗಳು",
+    "highlight_bimonthly": "ದ್ವೈಮಾಸಿಕ ಪತ್ರಿಕೆ",
+    "highlight_multidisciplinary": "ಬಹುಶಿಸ್ತೀಯ",
+    "highlight_peer_reviewed": "ಪಿಯರ್-ರಿವ್ಯೂಡ್",
+
+    "label_year": "ವರ್ಷ",
+    "label_volume": "ಸಂಪುಟ",
+    "label_issue": "ಸಂಚಿಕೆ",
+    "view_issue": "ಸಂಚಿಕೆಯನ್ನು ವೀಕ್ಷಿಸಿ",
+    "explore_archive": "ಆರ್ಕೈವ್ ಅನ್ವೇಷಿಸಿ",
+    "error_data_not_loaded": "ಡೇಟಾ ಲೋಡ್ ಆಗಲಿಲ್ಲ.",
+    "error_check_metadata": "ದಯವಿಟ್ಟು",
 
     "eb_title": "ಸಂಪಾದಕ ಮಂಡಳಿ",
     "eb_intro": "ನಮ್ಮ ಸಂಪಾದಕ ಮಂಡಳಿಯ ಗೌರವಾನ್ವಿತ ಸದಸ್ಯರು.",
@@ -351,6 +403,20 @@
     "contact_phone_label": "ದೂರವಾಣಿ",
     "contact_address_label": "ವಿಳಾಸ",
   "contact_publisher_label": "ಪ್ರಕಾಶಕರು",
-  "contact_chief_editor_label": "ಮುಖ್ಯ ಸಂಪಾದಕ"
+  "contact_chief_editor_label": "ಮುಖ್ಯ ಸಂಪಾದಕ",
+
+    "journal_info_title": "ಪತ್ರಿಕೆ ಮಾಹಿತಿ",
+    "journal_start_label": "ಆರಂಭಿತ ಇರುವುದು",
+    "journal_start_year": "2025",
+    "journal_frequency_label": "ಪ್ರಕಾಶನ ಆವೃತ್ತಿ",
+    "journal_format_label": "ರೂಪ",
+    "journal_subjects_label": "ವಿಷಯಗಳು / ಕ್ಷೇತ್ರ",
+    "journal_subjects_value": "ಕನ್ನಡ ಸಾಹಿತ್ಯ, ಭಾಷೆ, ಸಂಸ್ಕೃತಿ, ಬಹುಶಿಸ್ತೀಯ ಮಾನವಶಾಸ್ತ್ರ",
+    "journal_languages_label": "ಭಾಷೆಗಳು",
+    "journal_publisher_label": "ಪ್ರಕಾಶಕರು",
+    "journal_publisher_address": "ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ, ಭಾರತ",
+    "journal_link_guidelines": "ಸಲ್ಲಿಕೆ ಮಾರ್ಗಸೂಚಿ",
+    "journal_link_aims": "ಉದ್ದೇಶಗಳು ಮತ್ತು ವ್ಯಾಪ್ತಿ",
+    "journal_link_submission": "ಸಲ್ಲಿಕೆ ವಿವರಗಳು"
   }
 }

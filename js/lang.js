@@ -14,6 +14,7 @@ function applyLang(lang) {
   if (btn) btn.textContent = map.lang_btn;
 
   currentLang = lang;
+  window.currentLangStrings = map; // expose for inline scripts
   localStorage.setItem('lang', lang);
 }
 

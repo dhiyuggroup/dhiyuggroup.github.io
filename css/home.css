@@ -113,6 +113,32 @@
   border:1px solid rgba(168,23,23,.25); box-shadow:0 6px 16px rgba(168,23,23,.2);
   transition: transform .15s ease, box-shadow .15s ease;
 }
+
+/* Journal Information section */
+.sp-journal-info .journal-info-grid{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:1.25rem;
+  align-items:start;
+  margin-top:0.5rem;
+}
+.sp-journal-info .journal-info-list{
+  margin:0; padding:0; list-style:none;
+}
+.sp-journal-info .journal-info-list dt{
+  font-weight:700; color:var(--muted-text); margin-top:0.5rem;
+}
+.sp-journal-info .journal-info-list dd{
+  margin:0 0 0.8rem 0; color:var(--text); margin-left:0;
+}
+.sp-journal-info .journal-publisher .pub-name{ font-weight:700; margin-top:0.25rem; }
+.sp-journal-info .journal-links{ margin-top:0.75rem; }
+.sp-journal-info .journal-links a{ color:var(--link); text-decoration:underline; margin-right:0.5rem; }
+.sp-journal-info .sep{ color:var(--muted-text); margin:0 0.35rem; }
+
+@media (max-width:720px){
+  .sp-journal-info .journal-info-grid{ grid-template-columns: 1fr; }
+}
 .sp-btn:hover{ transform: translateY(-1px); box-shadow:0 10px 22px rgba(168,23,23,.28); }
 .sp-btn.ghost{
   background:#fff; color: var(--sp-red-700,#c51f1f);

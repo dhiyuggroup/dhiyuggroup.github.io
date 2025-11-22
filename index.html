@@ -50,6 +50,44 @@
     <div id="home-issue" class="home-issue" hidden></div>
   </section>
 
+    <!-- JOURNAL INFORMATION -->
+  <section class="sp-home__section sp-journal-info">
+    <div class="sp-home__section-head">
+      <h3 data-i18n="journal_info_title">Journal Information</h3>
+    </div>
+    <div class="journal-info-grid">
+      <dl class="journal-info-list">
+        <dt data-i18n="journal_start_label">Started</dt>
+        <dd data-i18n="journal_start_year">2025</dd>
+
+        <dt data-i18n="journal_frequency_label">Publication Frequency</dt>
+        <dd data-i18n="about_chip_monthly">Bi-Monthly</dd>
+
+        <dt data-i18n="journal_format_label">Format</dt>
+        <dd>Online</dd>
+
+        <dt data-i18n="journal_subjects_label">Subjects / Domain</dt>
+        <dd data-i18n="journal_subjects_value">Kannada literature, language, culture, multidisciplinary humanities</dd>
+
+        <dt data-i18n="journal_languages_label">Languages</dt>
+        <dd>Kannada, English</dd>
+      </dl>
+
+      <div class="journal-publisher">
+        <strong data-i18n="journal_publisher_label">Publisher</strong>
+        <div class="pub-name">Sahithya Prasthana</div>
+        <address data-i18n="journal_publisher_address">Bengaluru, Karnataka, India — <a href="/contact.html" data-i18n="nav_contact">Contact</a></address>
+        <div class="journal-links">
+          <a href="/guidelines.html" data-i18n="journal_link_guidelines">Author Guidelines</a>
+          <span class="sep">·</span>
+          <a href="/about.html" data-i18n="journal_link_aims">Aims & Scope</a>
+          <span class="sep">·</span>
+          <a href="/guidelines.html" data-i18n="journal_link_submission">Submission Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- QUICK LINKS -->
   <section class="sp-home__section">
     <div class="sp-home__section-head">
@@ -86,6 +124,8 @@
       <span class="chip"><span class="dot"></span><span data-i18n="highlight_peer_reviewed">ಪಿಯರ್-ರಿವ್ಯೂಡ್</span></span>
     </div>
   </section>
+
+
 </main>
 
   <!-- Reusable footer -->
@@ -100,77 +140,103 @@
       .then(() => include('#footer-include','/partials/footer.html'))
       .then(() => { if (window.spNavInit) window.spNavInit(); });
   </script>
-    <script>
-  (function(){
-    function normalizeIssues(issuesRaw){
-      if (!issuesRaw) return {};
-      if (Array.isArray(issuesRaw)) {
-        const o = {}; issuesRaw.forEach((v,i)=>o[String(i+1)]=v||{}); return o;
-      }
-      return issuesRaw;
-    }
-    function maxIssueKey(obj){
-      // pick highest numeric key; if not numeric, last key by natural order
-      const keys = Object.keys(obj);
-      if (!keys.length) return null;
-      const num = keys
-        .map(k => ({k, n: Number(k), isNum: /^\d+$/.test(k)}))
-        .sort((a,b) => (a.isNum && b.isNum) ? b.n - a.n : a.k.localeCompare(b.k))
-        [0];
-      return num.k;
-    }
-
-    const issueWrap = document.getElementById('home-issue');
-    const skel = document.getElementById('home-issue-skeleton');
-
-    fetch('assets/metadata.json')
-      .then(r => { if (!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
-      .then(data => {
-        const year = data.Year ?? '';
-        const volume = data.Volume ?? '';
-        const issuesObj = normalizeIssues(data.Issues ?? data.Issue);
-        const latestKey = maxIssueKey(issuesObj);
-        const issue = latestKey ? issuesObj[latestKey] : null;
-
-        const period = issue && issue.Period ? `<span class="meta__small">• ${issue.Period}</span>` : '';
-        const q = new URLSearchParams({ year, volume, issue: latestKey || '' }).toString();
-
-        issueWrap.innerHTML = `
-          <article class="home-issue__card">
-            <div class="home-issue__meta">
-              <span class="chip"><span class="dot"></span>ವರ್ಷ (Year): ${year}</span>
-              <span class="chip"><span class="dot"></span>ಸಂಪುಟ (Volume): ${volume}</span>
-              ${latestKey ? `<span class="chip"><span class="dot"></span>ಸಂಚಿಕೆ (Issue): ${latestKey}</span>` : ``}
-            </div>
-            <h4 class="home-issue__title">
-              ${year ? `Year ${year}` : ''} ${volume ? `• Volume ${volume}` : ''} ${latestKey ? `• Issue ${latestKey}` : ''}
-              ${period}
-            </h4>
-            <div class="home-issue__actions">
-              <a class="sp-btn" href="/issue.html?${q}" data-i18n="view_issue">ಸಂಚಿಕೆಯನ್ನು ವೀಕ್ಷಿಸಿ</a>
-              <a class="sp-btn ghost" href="/archive.html" data-i18n="explore_archive">ಆರ್ಕೈವ್ ಅನ್ವೇಷಿಸಿ</a>
-            </div>
-          </article>
-        `;
-
-        skel.hidden = true;
-        issueWrap.hidden = false;
-      })
-      .catch(() => {
-        skel.hidden = true;
-        issueWrap.hidden = false;
-        issueWrap.innerHTML = `
-          <div class="alert-card">
-            <strong>ಡೇಟಾ ಲೋಡ್ ಆಗಲಿಲ್ಲ.</strong>
-            <div>ದಯವಿಟ್ಟು <code>assets/metadata.json</code> ಪರಿಶೀಲಿಸಿ.</div>
-          </div>
-        `;
-      });
-  })();
-</script>
 
 
   <!-- i18n (loads strings from /lang/lang.json and swaps by data-i18n) -->
   <script src="/js/lang.js"></script>
+  <script>
+    // Wait for i18n to load, then trigger issue card rendering
+    function renderIssueCard() {
+      (function(){
+        function normalizeIssues(issuesRaw){
+          if (!issuesRaw) return {};
+          if (Array.isArray(issuesRaw)) {
+            const o = {}; issuesRaw.forEach((v,i)=>o[String(i+1)]=v||{}); return o;
+          }
+          return issuesRaw;
+        }
+        function maxIssueKey(obj){
+          const keys = Object.keys(obj);
+          if (!keys.length) return null;
+          const num = keys
+            .map(k => ({k, n: Number(k), isNum: /^\d+$/.test(k)}))
+            .sort((a,b) => (a.isNum && b.isNum) ? b.n - a.n : a.k.localeCompare(b.k))
+            [0];
+          return num.k;
+        }
+
+        const issueWrap = document.getElementById('home-issue');
+        const skel = document.getElementById('home-issue-skeleton');
+
+        fetch('assets/metadata.json')
+          .then(r => { if (!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+          .then(data => {
+            const year = data.Year ?? '';
+            const volume = data.Volume ?? '';
+            const issuesObj = normalizeIssues(data.Issues ?? data.Issue);
+            const latestKey = maxIssueKey(issuesObj);
+            const issue = latestKey ? issuesObj[latestKey] : null;
+
+            const period = issue && issue.Period ? `<span class="meta__small">• ${issue.Period}</span>` : '';
+            const q = new URLSearchParams({ year, volume, issue: latestKey || '' }).toString();
+
+            const i18n = window.currentLangStrings || {};
+            const yearLabel = i18n.label_year || 'ವರ್ಷ';
+            const volumeLabel = i18n.label_volume || 'ಸಂಪುಟ';
+            const issueLabel = i18n.label_issue || 'ಸಂಚಿಕೆ';
+            const viewIssueBtn = i18n.view_issue || 'ಸಂಚಿಕೆಯನ್ನು ವೀಕ್ಷಿಸಿ';
+            const exploreArchiveBtn = i18n.explore_archive || 'ಆರ್ಕೈವ್ ಅನ್ವೇಷಿಸಿ';
+
+            issueWrap.innerHTML = `
+              <article class="home-issue__card">
+                <div class="home-issue__meta">
+                  <span class="chip"><span class="dot"></span>${yearLabel}: ${year}</span>
+                  <span class="chip"><span class="dot"></span>${volumeLabel}: ${volume}</span>
+                  ${latestKey ? `<span class="chip"><span class="dot"></span>${issueLabel}: ${latestKey}</span>` : ``}
+                </div>
+                <h4 class="home-issue__title">
+                  ${year ? `${yearLabel} ${year}` : ''} ${volume ? `• ${volumeLabel} ${volume}` : ''} ${latestKey ? `• ${issueLabel} ${latestKey}` : ''}
+                  ${period}
+                </h4>
+                <div class="home-issue__actions">
+                  <a class="sp-btn" href="/issue.html?${q}">${viewIssueBtn}</a>
+                  <a class="sp-btn ghost" href="/archive.html">${exploreArchiveBtn}</a>
+                </div>
+              </article>
+            `;
+
+            skel.hidden = true;
+            issueWrap.hidden = false;
+          })
+          .catch(() => {
+            skel.hidden = true;
+            issueWrap.hidden = false;
+            const i18n = window.currentLangStrings || {};
+            const errorMsg = i18n.error_data_not_loaded || 'ಡೇಟಾ ಲೋಡ್ ಆಗಲಿಲ್ಲ.';
+            const errorCheck = i18n.error_check_metadata || 'ದಯವಿಟ್ಟು';
+            issueWrap.innerHTML = `
+              <div class="alert-card">
+                <strong>${errorMsg}</strong>
+                <div>${errorCheck} <code>assets/metadata.json</code> ಪರಿಶೀಲಿಸಿ.</div>
+              </div>
+            `;
+          });
+      })();
+    }
+
+    // Trigger after lang strings load
+    if (window.currentLangStrings) {
+      renderIssueCard();
+    } else {
+      setTimeout(renderIssueCard, 300);
+    }
+
+    // Re-render on language toggle
+    document.addEventListener('click', e => {
+      if (e.target && e.target.id === 'langToggle') {
+        setTimeout(renderIssueCard, 100);
+      }
+    });
+  </script>
 </body>
 </html>
